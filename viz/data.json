@@ -1,0 +1,3678 @@
+{
+  "nodes": [
+    {
+      "id": "AFG",
+      "lat": 33.94,
+      "lon": 67.71,
+      "region": "SAS",
+      "region_name": "South Asia",
+      "hdi": 0.496,
+      "exports_usd_k": 870488.5125,
+      "trade_pct_gdp": 21.4181,
+      "fdi_inflows_pct_gdp": 0.0,
+      "fdi_inflows_usd": 0.0,
+      "wealth_pc": null
+    },
+    {
+      "id": "AGO",
+      "lat": -11.2,
+      "lon": 17.87,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.574,
+      "exports_usd_k": 39505783.2087,
+      "trade_pct_gdp": 53.6392,
+      "fdi_inflows_pct_gdp": -1.0987,
+      "fdi_inflows_usd": -1109663097.0642,
+      "wealth_pc": 16987.858
+    },
+    {
+      "id": "ALB",
+      "lat": 41.15,
+      "lon": 20.17,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.791,
+      "exports_usd_k": 4374857.2125,
+      "trade_pct_gdp": 50.3283,
+      "fdi_inflows_pct_gdp": 6.3235,
+      "fdi_inflows_usd": 1710279512.4809,
+      "wealth_pc": 31922.1112
+    },
+    {
+      "id": "ARE",
+      "lat": 23.42,
+      "lon": 53.85,
+      "region": "MNA",
+      "region_name": "Middle East & North Africa",
+      "hdi": 0.866,
+      "exports_usd_k": 570245383.5845,
+      "trade_pct_gdp": 207.7641,
+      "fdi_inflows_pct_gdp": 8.2626,
+      "fdi_inflows_usd": 45636487406.3989,
+      "wealth_pc": 456558.3312
+    },
+    {
+      "id": "ARG",
+      "lat": -38.42,
+      "lon": -63.62,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.83,
+      "exports_usd_k": 66788515.9863,
+      "trade_pct_gdp": 22.006,
+      "fdi_inflows_pct_gdp": 1.8241,
+      "fdi_inflows_usd": 11644393816.0627,
+      "wealth_pc": 72569.941
+    },
+    {
+      "id": "ARM",
+      "lat": 40.07,
+      "lon": 45.04,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.76,
+      "exports_usd_k": 8508041.3759,
+      "trade_pct_gdp": 116.196,
+      "fdi_inflows_pct_gdp": 0.5069,
+      "fdi_inflows_usd": 131561668.0961,
+      "wealth_pc": 32956.4667
+    },
+    {
+      "id": "AUS",
+      "lat": -25.27,
+      "lon": 133.78,
+      "region": "EAP",
+      "region_name": "East Asia & Pacific",
+      "hdi": 0.938,
+      "exports_usd_k": 369235124.1591,
+      "trade_pct_gdp": 36.2641,
+      "fdi_inflows_pct_gdp": 3.0706,
+      "fdi_inflows_usd": 53950665928.6456,
+      "wealth_pc": 823997.0539
+    },
+    {
+      "id": "AUT",
+      "lat": 47.52,
+      "lon": 14.55,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.914,
+      "exports_usd_k": 216176589.4702,
+      "trade_pct_gdp": 79.6446,
+      "fdi_inflows_pct_gdp": 2.5535,
+      "fdi_inflows_usd": 13655965523.2324,
+      "wealth_pc": 479864.5155
+    },
+    {
+      "id": "AZE",
+      "lat": 40.14,
+      "lon": 47.58,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.754,
+      "exports_usd_k": 33898554.8553,
+      "trade_pct_gdp": 64.0671,
+      "fdi_inflows_pct_gdp": 0.3112,
+      "fdi_inflows_usd": 231276000.0,
+      "wealth_pc": 12631.6417
+    },
+    {
+      "id": "BDI",
+      "lat": -3.37,
+      "lon": 29.92,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.423,
+      "exports_usd_k": 217474.2612,
+      "trade_pct_gdp": 38.833,
+      "fdi_inflows_pct_gdp": 1.0811,
+      "fdi_inflows_usd": 33322927.992,
+      "wealth_pc": 5530.7373
+    },
+    {
+      "id": "BEL",
+      "lat": 50.5,
+      "lon": 4.47,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.919,
+      "exports_usd_k": 393157732.8964,
+      "trade_pct_gdp": 156.4166,
+      "fdi_inflows_pct_gdp": -6.1602,
+      "fdi_inflows_usd": -41357732773.2876,
+      "wealth_pc": 454373.0778
+    },
+    {
+      "id": "BEN",
+      "lat": 9.31,
+      "lon": 2.32,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.52,
+      "exports_usd_k": 1052210.9135,
+      "trade_pct_gdp": 41.9036,
+      "fdi_inflows_pct_gdp": 2.5277,
+      "fdi_inflows_usd": 543007400.0,
+      "wealth_pc": 20491.6078
+    },
+    {
+      "id": "BFA",
+      "lat": 12.24,
+      "lon": -1.56,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.434,
+      "exports_usd_k": 4458757.1372,
+      "trade_pct_gdp": 52.1909,
+      "fdi_inflows_pct_gdp": 0.3587,
+      "fdi_inflows_usd": 82944120.0,
+      "wealth_pc": 9590.1831
+    },
+    {
+      "id": "BGD",
+      "lat": 23.68,
+      "lon": 90.36,
+      "region": "SAS",
+      "region_name": "South Asia",
+      "hdi": 0.614,
+      "exports_usd_k": 31734162.419,
+      "trade_pct_gdp": 25.5765,
+      "fdi_inflows_pct_gdp": 0.3417,
+      "fdi_inflows_usd": 1537972140.3536,
+      "wealth_pc": 14807.0773
+    },
+    {
+      "id": "BGR",
+      "lat": 42.73,
+      "lon": 25.49,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.816,
+      "exports_usd_k": 47900556.8304,
+      "trade_pct_gdp": 88.591,
+      "fdi_inflows_pct_gdp": 3.0667,
+      "fdi_inflows_usd": 3475860000.0,
+      "wealth_pc": 51560.105
+    },
+    {
+      "id": "BHR",
+      "lat": 26.07,
+      "lon": 50.56,
+      "region": "MNA",
+      "region_name": "Middle East & North Africa",
+      "hdi": 0.838,
+      "exports_usd_k": 12406927.7594,
+      "trade_pct_gdp": 84.6704,
+      "fdi_inflows_pct_gdp": 5.7369,
+      "fdi_inflows_usd": 2702659574.4681,
+      "wealth_pc": 132738.2402
+    },
+    {
+      "id": "BHS",
+      "lat": 25.03,
+      "lon": -77.4,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.805,
+      "exports_usd_k": 700601.581,
+      "trade_pct_gdp": 35.458,
+      "fdi_inflows_pct_gdp": 1.5193,
+      "fdi_inflows_usd": 240551037.3,
+      "wealth_pc": null
+    },
+    {
+      "id": "BIH",
+      "lat": 43.92,
+      "lon": 17.68,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.769,
+      "exports_usd_k": 9228185.8502,
+      "trade_pct_gdp": 83.5326,
+      "fdi_inflows_pct_gdp": 3.3902,
+      "fdi_inflows_usd": 1003973637.8711,
+      "wealth_pc": 38523.5792
+    },
+    {
+      "id": "BLR",
+      "lat": 53.71,
+      "lon": 27.95,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.817,
+      "exports_usd_k": 39889022.8,
+      "trade_pct_gdp": 113.2502,
+      "fdi_inflows_pct_gdp": 2.286,
+      "fdi_inflows_usd": 1736476396.56,
+      "wealth_pc": 49538.5755
+    },
+    {
+      "id": "BLZ",
+      "lat": 17.19,
+      "lon": -88.5,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.72,
+      "exports_usd_k": 253373.3818,
+      "trade_pct_gdp": 60.4626,
+      "fdi_inflows_pct_gdp": 4.0099,
+      "fdi_inflows_usd": 128463236.8256,
+      "wealth_pc": 29498.5588
+    },
+    {
+      "id": "BOL",
+      "lat": -16.29,
+      "lon": -63.59,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.703,
+      "exports_usd_k": 10918688.0571,
+      "trade_pct_gdp": 34.5527,
+      "fdi_inflows_pct_gdp": 0.5319,
+      "fdi_inflows_usd": 291908757.7275,
+      "wealth_pc": 27296.6196
+    },
+    {
+      "id": "BRA",
+      "lat": -14.24,
+      "lon": -51.93,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.761,
+      "exports_usd_k": 339695766.008,
+      "trade_pct_gdp": 28.1359,
+      "fdi_inflows_pct_gdp": 3.3896,
+      "fdi_inflows_usd": 74090786050.19,
+      "wealth_pc": 69362.8425
+    },
+    {
+      "id": "BRN",
+      "lat": 4.54,
+      "lon": 114.73,
+      "region": "EAP",
+      "region_name": "East Asia & Pacific",
+      "hdi": 0.845,
+      "exports_usd_k": 11240624.7053,
+      "trade_pct_gdp": 120.8411,
+      "fdi_inflows_pct_gdp": 0.1894,
+      "fdi_inflows_usd": 29063018.649,
+      "wealth_pc": null
+    },
+    {
+      "id": "BTN",
+      "lat": 27.51,
+      "lon": 90.43,
+      "region": "SAS",
+      "region_name": "South Asia",
+      "hdi": 0.617,
+      "exports_usd_k": 435625.8803,
+      "trade_pct_gdp": 65.5889,
+      "fdi_inflows_pct_gdp": 0.3955,
+      "fdi_inflows_usd": 22778261.8023,
+      "wealth_pc": null
+    },
+    {
+      "id": "BWA",
+      "lat": -22.33,
+      "lon": 24.68,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.728,
+      "exports_usd_k": 5502716.5238,
+      "trade_pct_gdp": 60.9574,
+      "fdi_inflows_pct_gdp": 2.4083,
+      "fdi_inflows_usd": 467266647.2919,
+      "wealth_pc": 41815.5409
+    },
+    {
+      "id": "CAF",
+      "lat": 6.61,
+      "lon": 20.94,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.381,
+      "exports_usd_k": 113284.6702,
+      "trade_pct_gdp": 23.7689,
+      "fdi_inflows_pct_gdp": 1.4685,
+      "fdi_inflows_usd": 40406020.0,
+      "wealth_pc": 5464.8618
+    },
+    {
+      "id": "CAN",
+      "lat": 56.13,
+      "lon": -106.35,
+      "region": "NAC",
+      "region_name": "North America",
+      "hdi": 0.922,
+      "exports_usd_k": 567344538.0035,
+      "trade_pct_gdp": 50.9421,
+      "fdi_inflows_pct_gdp": 2.6206,
+      "fdi_inflows_usd": 58797136074.7493,
+      "wealth_pc": 577306.2117
+    },
+    {
+      "id": "CHE",
+      "lat": 46.82,
+      "lon": 8.23,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.946,
+      "exports_usd_k": 419922543.4235,
+      "trade_pct_gdp": 87.1347,
+      "fdi_inflows_pct_gdp": -9.9256,
+      "fdi_inflows_usd": -92959774390.3162,
+      "wealth_pc": 1263323.8143
+    },
+    {
+      "id": "CHL",
+      "lat": -35.68,
+      "lon": -71.54,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.847,
+      "exports_usd_k": 94935525.0079,
+      "trade_pct_gdp": 55.5384,
+      "fdi_inflows_pct_gdp": 3.7913,
+      "fdi_inflows_usd": 12521388616.3117,
+      "wealth_pc": 139200.7741
+    },
+    {
+      "id": "CHN",
+      "lat": 35.86,
+      "lon": 104.2,
+      "region": "EAP",
+      "region_name": "East Asia & Pacific",
+      "hdi": 0.758,
+      "exports_usd_k": 3379747834.884,
+      "trade_pct_gdp": 32.8725,
+      "fdi_inflows_pct_gdp": 0.099,
+      "fdi_inflows_usd": 18556141172.84,
+      "wealth_pc": 84322.741
+    },
+    {
+      "id": "CIV",
+      "lat": 7.54,
+      "lon": -5.55,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.516,
+      "exports_usd_k": 18350163.6185,
+      "trade_pct_gdp": 42.5688,
+      "fdi_inflows_pct_gdp": 4.3646,
+      "fdi_inflows_usd": 3802117860.0,
+      "wealth_pc": 26517.7445
+    },
+    {
+      "id": "CMR",
+      "lat": 7.37,
+      "lon": 12.35,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.563,
+      "exports_usd_k": 4967511.896,
+      "trade_pct_gdp": 26.4557,
+      "fdi_inflows_pct_gdp": 1.7361,
+      "fdi_inflows_usd": 925275150.0,
+      "wealth_pc": 20600.442
+    },
+    {
+      "id": "COD",
+      "lat": -4.04,
+      "lon": 21.76,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.459,
+      "exports_usd_k": 27726829.3728,
+      "trade_pct_gdp": 79.6199,
+      "fdi_inflows_pct_gdp": 4.1079,
+      "fdi_inflows_usd": 2915055322.5664,
+      "wealth_pc": 9338.6592
+    },
+    {
+      "id": "COG",
+      "lat": -0.23,
+      "lon": 15.83,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.609,
+      "exports_usd_k": 9465032.9547,
+      "trade_pct_gdp": 83.1871,
+      "fdi_inflows_pct_gdp": 3.8398,
+      "fdi_inflows_usd": 603616460.0,
+      "wealth_pc": 29578.8661
+    },
+    {
+      "id": "COL",
+      "lat": 4.57,
+      "lon": -74.3,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.761,
+      "exports_usd_k": 49769114.4324,
+      "trade_pct_gdp": 27.1404,
+      "fdi_inflows_pct_gdp": 3.2673,
+      "fdi_inflows_usd": 13683861747.2544,
+      "wealth_pc": 47466.9555
+    },
+    {
+      "id": "CRI",
+      "lat": 9.75,
+      "lon": -83.75,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.794,
+      "exports_usd_k": 18105904.6737,
+      "trade_pct_gdp": 50.521,
+      "fdi_inflows_pct_gdp": 5.5568,
+      "fdi_inflows_usd": 5298432816.4954,
+      "wealth_pc": 114877.2947
+    },
+    {
+      "id": "CYP",
+      "lat": 35.13,
+      "lon": 33.43,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.873,
+      "exports_usd_k": 5132376.1963,
+      "trade_pct_gdp": 47.1455,
+      "fdi_inflows_pct_gdp": -133.8243,
+      "fdi_inflows_usd": -50364142878.0379,
+      "wealth_pc": null
+    },
+    {
+      "id": "CZE",
+      "lat": 49.82,
+      "lon": 15.47,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.891,
+      "exports_usd_k": 253327521.218,
+      "trade_pct_gdp": 142.9514,
+      "fdi_inflows_pct_gdp": 3.7608,
+      "fdi_inflows_usd": 13051379572.6952,
+      "wealth_pc": 198181.9606
+    },
+    {
+      "id": "DEU",
+      "lat": 51.17,
+      "lon": 10.45,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.939,
+      "exports_usd_k": 1725527288.3545,
+      "trade_pct_gdp": 66.2339,
+      "fdi_inflows_pct_gdp": 1.0159,
+      "fdi_inflows_usd": 47599143488.7827,
+      "wealth_pc": 604323.4574
+    },
+    {
+      "id": "DJI",
+      "lat": 11.83,
+      "lon": 42.59,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.495,
+      "exports_usd_k": 4784715.6823,
+      "trade_pct_gdp": 258.0593,
+      "fdi_inflows_pct_gdp": 1.6334,
+      "fdi_inflows_usd": 67819948.2475,
+      "wealth_pc": 12457.6186
+    },
+    {
+      "id": "DNK",
+      "lat": 56.26,
+      "lon": 9.5,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.93,
+      "exports_usd_k": 128600488.3982,
+      "trade_pct_gdp": 60.3223,
+      "fdi_inflows_pct_gdp": 4.3674,
+      "fdi_inflows_usd": 18540782141.6393,
+      "wealth_pc": 780861.4158
+    },
+    {
+      "id": "DOM",
+      "lat": 18.74,
+      "lon": -70.16,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.745,
+      "exports_usd_k": 11931953.786,
+      "trade_pct_gdp": 35.1458,
+      "fdi_inflows_pct_gdp": 3.6014,
+      "fdi_inflows_usd": 4475900000.0,
+      "wealth_pc": 51048.1048
+    },
+    {
+      "id": "DZA",
+      "lat": 28.03,
+      "lon": 1.66,
+      "region": "MNA",
+      "region_name": "Middle East & North Africa",
+      "hdi": 0.759,
+      "exports_usd_k": 35191117.4161,
+      "trade_pct_gdp": 35.192,
+      "fdi_inflows_pct_gdp": 0.4554,
+      "fdi_inflows_usd": 1226414841.3725,
+      "wealth_pc": null
+    },
+    {
+      "id": "ECU",
+      "lat": -1.83,
+      "lon": -78.18,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.758,
+      "exports_usd_k": 31126424.0763,
+      "trade_pct_gdp": 51.2624,
+      "fdi_inflows_pct_gdp": 0.3513,
+      "fdi_inflows_usd": 437954171.6948,
+      "wealth_pc": 58826.2266
+    },
+    {
+      "id": "EGY",
+      "lat": 26.82,
+      "lon": 30.8,
+      "region": "MNA",
+      "region_name": "Middle East & North Africa",
+      "hdi": 0.7,
+      "exports_usd_k": 42553243.1511,
+      "trade_pct_gdp": 32.9597,
+      "fdi_inflows_pct_gdp": 11.9719,
+      "fdi_inflows_usd": 46578000000.0,
+      "wealth_pc": 19118.793
+    },
+    {
+      "id": "ERI",
+      "lat": 15.18,
+      "lon": 39.78,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.434,
+      "exports_usd_k": 6618.76,
+      "trade_pct_gdp": 30.8977,
+      "fdi_inflows_pct_gdp": 1.8886,
+      "fdi_inflows_usd": -27949590.0,
+      "wealth_pc": null
+    },
+    {
+      "id": "ESP",
+      "lat": 40.46,
+      "lon": -3.75,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.893,
+      "exports_usd_k": 420169591.0025,
+      "trade_pct_gdp": 51.9303,
+      "fdi_inflows_pct_gdp": 2.479,
+      "fdi_inflows_usd": 42778827261.0579,
+      "wealth_pc": 200975.9846
+    },
+    {
+      "id": "EST",
+      "lat": 58.6,
+      "lon": 25.01,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.882,
+      "exports_usd_k": 20108196.603,
+      "trade_pct_gdp": 95.6773,
+      "fdi_inflows_pct_gdp": -7.971,
+      "fdi_inflows_usd": -3437916450.3768,
+      "wealth_pc": 201882.042
+    },
+    {
+      "id": "ETH",
+      "lat": 9.15,
+      "lon": 40.49,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.47,
+      "exports_usd_k": 2859456.866,
+      "trade_pct_gdp": 17.3567,
+      "fdi_inflows_pct_gdp": 2.6858,
+      "fdi_inflows_usd": 4021755290.0,
+      "wealth_pc": 13043.7984
+    },
+    {
+      "id": "FIN",
+      "lat": 61.92,
+      "lon": 25.75,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.925,
+      "exports_usd_k": 82567752.6728,
+      "trade_pct_gdp": 53.1264,
+      "fdi_inflows_pct_gdp": 2.9267,
+      "fdi_inflows_usd": 8741865603.0123,
+      "wealth_pc": 519258.5347
+    },
+    {
+      "id": "FJI",
+      "lat": -17.71,
+      "lon": 178.07,
+      "region": "EAP",
+      "region_name": "East Asia & Pacific",
+      "hdi": 0.724,
+      "exports_usd_k": 1067689.6976,
+      "trade_pct_gdp": 70.8598,
+      "fdi_inflows_pct_gdp": 3.4179,
+      "fdi_inflows_usd": 203985360.0,
+      "wealth_pc": null
+    },
+    {
+      "id": "FRA",
+      "lat": 46.23,
+      "lon": 2.21,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.891,
+      "exports_usd_k": 640201369.7803,
+      "trade_pct_gdp": 43.9632,
+      "fdi_inflows_pct_gdp": 1.647,
+      "fdi_inflows_usd": 52052548617.7634,
+      "wealth_pc": 459901.8559
+    },
+    {
+      "id": "GAB",
+      "lat": -0.8,
+      "lon": 11.61,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.702,
+      "exports_usd_k": 12694967.5286,
+      "trade_pct_gdp": 81.8351,
+      "fdi_inflows_pct_gdp": 5.4775,
+      "fdi_inflows_usd": 1144562350.0,
+      "wealth_pc": 35517.9177
+    },
+    {
+      "id": "GBR",
+      "lat": 55.38,
+      "lon": -3.44,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.92,
+      "exports_usd_k": 521207222.9553,
+      "trade_pct_gdp": 36.0438,
+      "fdi_inflows_pct_gdp": -1.6453,
+      "fdi_inflows_usd": -60647281077.0004,
+      "wealth_pc": 386568.5363
+    },
+    {
+      "id": "GEO",
+      "lat": 42.32,
+      "lon": 43.36,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.786,
+      "exports_usd_k": 6086325.965,
+      "trade_pct_gdp": 68.5826,
+      "fdi_inflows_pct_gdp": 4.6884,
+      "fdi_inflows_usd": 1602929459.4,
+      "wealth_pc": 16298.9917
+    },
+    {
+      "id": "GHA",
+      "lat": 7.95,
+      "lon": -1.02,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.596,
+      "exports_usd_k": 16874662.2861,
+      "trade_pct_gdp": 43.0845,
+      "fdi_inflows_pct_gdp": 2.1451,
+      "fdi_inflows_usd": 1765552579.5641,
+      "wealth_pc": 26259.8547
+    },
+    {
+      "id": "GIN",
+      "lat": 9.95,
+      "lon": -9.7,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.466,
+      "exports_usd_k": 2394528.5209,
+      "trade_pct_gdp": 62.8902,
+      "fdi_inflows_pct_gdp": 5.6054,
+      "fdi_inflows_usd": 1401830000.0,
+      "wealth_pc": 12167.3262
+    },
+    {
+      "id": "GMB",
+      "lat": 13.44,
+      "lon": -15.31,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.466,
+      "exports_usd_k": 83449.8016,
+      "trade_pct_gdp": 73.5585,
+      "fdi_inflows_pct_gdp": 9.6619,
+      "fdi_inflows_usd": 232357063.9171,
+      "wealth_pc": 4032.2154
+    },
+    {
+      "id": "GNB",
+      "lat": 11.8,
+      "lon": -15.18,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.461,
+      "exports_usd_k": 244798.7581,
+      "trade_pct_gdp": 33.0419,
+      "fdi_inflows_pct_gdp": 1.1993,
+      "fdi_inflows_usd": 26606180.0,
+      "wealth_pc": 12094.9743
+    },
+    {
+      "id": "GNQ",
+      "lat": 1.65,
+      "lon": 10.27,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.588,
+      "exports_usd_k": null,
+      "trade_pct_gdp": 35.2192,
+      "fdi_inflows_pct_gdp": 1.4728,
+      "fdi_inflows_usd": 188011680.0,
+      "wealth_pc": null
+    },
+    {
+      "id": "GRC",
+      "lat": 39.07,
+      "lon": 21.82,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.872,
+      "exports_usd_k": 55051586.7837,
+      "trade_pct_gdp": 56.8998,
+      "fdi_inflows_pct_gdp": 2.6313,
+      "fdi_inflows_usd": 6742277267.3483,
+      "wealth_pc": 95329.1288
+    },
+    {
+      "id": "GTM",
+      "lat": 15.78,
+      "lon": -90.23,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.651,
+      "exports_usd_k": 14261032.628,
+      "trade_pct_gdp": 41.5982,
+      "fdi_inflows_pct_gdp": 1.6325,
+      "fdi_inflows_usd": 1848004120.0,
+      "wealth_pc": 35546.4947
+    },
+    {
+      "id": "GUY",
+      "lat": 4.86,
+      "lon": -58.93,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.67,
+      "exports_usd_k": 10811756.2302,
+      "trade_pct_gdp": 107.9322,
+      "fdi_inflows_pct_gdp": 34.9901,
+      "fdi_inflows_usd": 8629500000.0,
+      "wealth_pc": 82177.646
+    },
+    {
+      "id": "HKG",
+      "lat": 22.4,
+      "lon": 114.11,
+      "region": "EAP",
+      "region_name": "East Asia & Pacific",
+      "hdi": null,
+      "exports_usd_k": 575044377.6458,
+      "trade_pct_gdp": 331.7276,
+      "fdi_inflows_pct_gdp": 28.7631,
+      "fdi_inflows_usd": 117026502147.146,
+      "wealth_pc": null
+    },
+    {
+      "id": "HND",
+      "lat": 15.2,
+      "lon": -86.24,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.623,
+      "exports_usd_k": 7170970.7744,
+      "trade_pct_gdp": 77.7412,
+      "fdi_inflows_pct_gdp": 3.529,
+      "fdi_inflows_usd": 1309045847.4137,
+      "wealth_pc": 20468.0871
+    },
+    {
+      "id": "HRV",
+      "lat": 45.1,
+      "lon": 15.2,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.837,
+      "exports_usd_k": 24670430.758,
+      "trade_pct_gdp": 77.2371,
+      "fdi_inflows_pct_gdp": 5.0174,
+      "fdi_inflows_usd": 4665323978.6798,
+      "wealth_pc": 93443.7612
+    },
+    {
+      "id": "HTI",
+      "lat": 18.97,
+      "lon": -72.29,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.503,
+      "exports_usd_k": null,
+      "trade_pct_gdp": 14.8508,
+      "fdi_inflows_pct_gdp": 0.0793,
+      "fdi_inflows_usd": 20001152.0,
+      "wealth_pc": 9354.4622
+    },
+    {
+      "id": "HUN",
+      "lat": 47.16,
+      "lon": 19.5,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.845,
+      "exports_usd_k": 158563412.727,
+      "trade_pct_gdp": 137.4184,
+      "fdi_inflows_pct_gdp": -27.9229,
+      "fdi_inflows_usd": -62190710104.0316,
+      "wealth_pc": 111829.3919
+    },
+    {
+      "id": "IDN",
+      "lat": -0.79,
+      "lon": 113.92,
+      "region": "EAP",
+      "region_name": "East Asia & Pacific",
+      "hdi": 0.707,
+      "exports_usd_k": 258774386.645,
+      "trade_pct_gdp": 35.6918,
+      "fdi_inflows_pct_gdp": 1.7365,
+      "fdi_inflows_usd": 24246911222.5792,
+      "wealth_pc": 25468.9868
+    },
+    {
+      "id": "IND",
+      "lat": 20.59,
+      "lon": 78.96,
+      "region": "SAS",
+      "region_name": "South Asia",
+      "hdi": 0.647,
+      "exports_usd_k": 431411977.2113,
+      "trade_pct_gdp": 29.6945,
+      "fdi_inflows_pct_gdp": 0.6941,
+      "fdi_inflows_usd": 27139853378.1402,
+      "wealth_pc": 15554.0095
+    },
+    {
+      "id": "IRL",
+      "lat": 53.14,
+      "lon": -7.69,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.942,
+      "exports_usd_k": 212869514.2408,
+      "trade_pct_gdp": 63.1564,
+      "fdi_inflows_pct_gdp": 0.7911,
+      "fdi_inflows_usd": 4818899599.8141,
+      "wealth_pc": 388157.0236
+    },
+    {
+      "id": "IRN",
+      "lat": 32.43,
+      "lon": 53.69,
+      "region": "MNA",
+      "region_name": "Middle East & North Africa",
+      "hdi": 0.797,
+      "exports_usd_k": 80900398.2518,
+      "trade_pct_gdp": 38.2892,
+      "fdi_inflows_pct_gdp": 0.3049,
+      "fdi_inflows_usd": 1449111110.0,
+      "wealth_pc": 38636.5671
+    },
+    {
+      "id": "IRQ",
+      "lat": 33.22,
+      "lon": 43.68,
+      "region": "MNA",
+      "region_name": "Middle East & North Africa",
+      "hdi": 0.689,
+      "exports_usd_k": 84506036.565,
+      "trade_pct_gdp": 67.372,
+      "fdi_inflows_pct_gdp": -2.7353,
+      "fdi_inflows_usd": -7648900000.0,
+      "wealth_pc": 42988.3783
+    },
+    {
+      "id": "ISL",
+      "lat": 64.96,
+      "lon": -19.02,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.938,
+      "exports_usd_k": 6807539.9767,
+      "trade_pct_gdp": 50.3531,
+      "fdi_inflows_pct_gdp": 8.1175,
+      "fdi_inflows_usd": 2699492845.308,
+      "wealth_pc": 953747.0859
+    },
+    {
+      "id": "ISR",
+      "lat": 31.05,
+      "lon": 34.85,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.906,
+      "exports_usd_k": 58904608.0,
+      "trade_pct_gdp": 28.4629,
+      "fdi_inflows_pct_gdp": 2.7347,
+      "fdi_inflows_usd": 14777900000.0,
+      "wealth_pc": 466740.941
+    },
+    {
+      "id": "ITA",
+      "lat": 41.87,
+      "lon": 12.57,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.883,
+      "exports_usd_k": 677095229.0009,
+      "trade_pct_gdp": 54.1755,
+      "fdi_inflows_pct_gdp": 1.13,
+      "fdi_inflows_usd": 26903748175.4513,
+      "wealth_pc": 247660.4201
+    },
+    {
+      "id": "JAM",
+      "lat": 18.11,
+      "lon": -77.3,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.726,
+      "exports_usd_k": 2001802.2168,
+      "trade_pct_gdp": 41.5864,
+      "fdi_inflows_pct_gdp": 1.3858,
+      "fdi_inflows_usd": 305079506.2,
+      "wealth_pc": 48951.1147
+    },
+    {
+      "id": "JOR",
+      "lat": 30.59,
+      "lon": 36.24,
+      "region": "MNA",
+      "region_name": "Middle East & North Africa",
+      "hdi": 0.723,
+      "exports_usd_k": 12589565.4878,
+      "trade_pct_gdp": 75.352,
+      "fdi_inflows_pct_gdp": 3.0639,
+      "fdi_inflows_usd": 1634647887.3239,
+      "wealth_pc": 13871.8305
+    },
+    {
+      "id": "JPN",
+      "lat": 36.2,
+      "lon": 138.25,
+      "region": "EAP",
+      "region_name": "East Asia & Pacific",
+      "hdi": 0.915,
+      "exports_usd_k": 717946392.1391,
+      "trade_pct_gdp": 36.0142,
+      "fdi_inflows_pct_gdp": 0.4264,
+      "fdi_inflows_usd": 17174260938.7552,
+      "wealth_pc": 521062.0885
+    },
+    {
+      "id": "KAZ",
+      "lat": 48.02,
+      "lon": 66.92,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.817,
+      "exports_usd_k": 78735590.8669,
+      "trade_pct_gdp": 48.581,
+      "fdi_inflows_pct_gdp": 0.6789,
+      "fdi_inflows_usd": 1978987098.0238,
+      "wealth_pc": 52951.7255
+    },
+    {
+      "id": "KEN",
+      "lat": -0.02,
+      "lon": 37.91,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.579,
+      "exports_usd_k": 7158109.3328,
+      "trade_pct_gdp": 23.5376,
+      "fdi_inflows_pct_gdp": 0.3851,
+      "fdi_inflows_usd": 463439704.1964,
+      "wealth_pc": 21225.8992
+    },
+    {
+      "id": "KGZ",
+      "lat": 41.2,
+      "lon": 74.77,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.674,
+      "exports_usd_k": 3384855.97,
+      "trade_pct_gdp": 91.7826,
+      "fdi_inflows_pct_gdp": 4.0355,
+      "fdi_inflows_usd": 705333330.0,
+      "wealth_pc": 10337.5854
+    },
+    {
+      "id": "KHM",
+      "lat": 12.57,
+      "lon": 104.99,
+      "region": "EAP",
+      "region_name": "East Asia & Pacific",
+      "hdi": 0.581,
+      "exports_usd_k": 21676660.0065,
+      "trade_pct_gdp": 119.4322,
+      "fdi_inflows_pct_gdp": 9.4809,
+      "fdi_inflows_usd": 4394647334.3021,
+      "wealth_pc": 14832.3206
+    },
+    {
+      "id": "KOR",
+      "lat": 35.91,
+      "lon": 127.77,
+      "region": "EAP",
+      "region_name": "East Asia & Pacific",
+      "hdi": 0.906,
+      "exports_usd_k": 631804230.615,
+      "trade_pct_gdp": 70.1389,
+      "fdi_inflows_pct_gdp": 0.8119,
+      "fdi_inflows_usd": 15225800000.0,
+      "wealth_pc": 270610.3138
+    },
+    {
+      "id": "KWT",
+      "lat": 29.31,
+      "lon": 47.48,
+      "region": "MNA",
+      "region_name": "Middle East & North Africa",
+      "hdi": 0.808,
+      "exports_usd_k": 83979908.8279,
+      "trade_pct_gdp": 70.5598,
+      "fdi_inflows_pct_gdp": 0.3836,
+      "fdi_inflows_usd": 614580245.8318,
+      "wealth_pc": 317942.5792
+    },
+    {
+      "id": "LAO",
+      "lat": 19.86,
+      "lon": 102.5,
+      "region": "EAP",
+      "region_name": "East Asia & Pacific",
+      "hdi": 0.604,
+      "exports_usd_k": 6042417.5917,
+      "trade_pct_gdp": 109.3684,
+      "fdi_inflows_pct_gdp": 5.9896,
+      "fdi_inflows_usd": 988457806.7885,
+      "wealth_pc": 29188.915
+    },
+    {
+      "id": "LBN",
+      "lat": 33.85,
+      "lon": 35.86,
+      "region": "MNA",
+      "region_name": "Middle East & North Africa",
+      "hdi": 0.73,
+      "exports_usd_k": 4560693.573,
+      "trade_pct_gdp": 81.2039,
+      "fdi_inflows_pct_gdp": 3.2644,
+      "fdi_inflows_usd": 1842524610.0,
+      "wealth_pc": 20694.226
+    },
+    {
+      "id": "LBR",
+      "lat": 6.43,
+      "lon": -9.43,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.465,
+      "exports_usd_k": 153702.5712,
+      "trade_pct_gdp": 62.1639,
+      "fdi_inflows_pct_gdp": 15.6254,
+      "fdi_inflows_usd": 746785490.0,
+      "wealth_pc": 12608.7381
+    },
+    {
+      "id": "LBY",
+      "lat": 26.34,
+      "lon": 17.23,
+      "region": "MNA",
+      "region_name": "Middle East & North Africa",
+      "hdi": 0.708,
+      "exports_usd_k": 29285909.0879,
+      "trade_pct_gdp": 98.0961,
+      "fdi_inflows_pct_gdp": 0.0,
+      "fdi_inflows_usd": 0.0,
+      "wealth_pc": null
+    },
+    {
+      "id": "LKA",
+      "lat": 7.87,
+      "lon": 80.77,
+      "region": "SAS",
+      "region_name": "South Asia",
+      "hdi": 0.78,
+      "exports_usd_k": 12052497.5489,
+      "trade_pct_gdp": 31.9452,
+      "fdi_inflows_pct_gdp": 0.7691,
+      "fdi_inflows_usd": 761144545.7349,
+      "wealth_pc": 17706.599
+    },
+    {
+      "id": "LSO",
+      "lat": -29.61,
+      "lon": 28.23,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.518,
+      "exports_usd_k": 829902.3389,
+      "trade_pct_gdp": 125.3214,
+      "fdi_inflows_pct_gdp": -0.5534,
+      "fdi_inflows_usd": -12572108.0399,
+      "wealth_pc": 8720.1055
+    },
+    {
+      "id": "LTU",
+      "lat": 55.17,
+      "lon": 23.88,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.869,
+      "exports_usd_k": 42625691.925,
+      "trade_pct_gdp": 99.5214,
+      "fdi_inflows_pct_gdp": 5.5382,
+      "fdi_inflows_usd": 4700199442.924,
+      "wealth_pc": 152546.0966
+    },
+    {
+      "id": "LUX",
+      "lat": 49.82,
+      "lon": 6.13,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.909,
+      "exports_usd_k": 16367613.4125,
+      "trade_pct_gdp": 44.2839,
+      "fdi_inflows_pct_gdp": 113.6222,
+      "fdi_inflows_usd": 105986643430.0,
+      "wealth_pc": 988729.6934
+    },
+    {
+      "id": "LVA",
+      "lat": 56.88,
+      "lon": 24.6,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.854,
+      "exports_usd_k": 20539978.4321,
+      "trade_pct_gdp": 101.643,
+      "fdi_inflows_pct_gdp": 3.4658,
+      "fdi_inflows_usd": 1514022170.3463,
+      "wealth_pc": 163609.9372
+    },
+    {
+      "id": "MAR",
+      "lat": 31.79,
+      "lon": -7.09,
+      "region": "MNA",
+      "region_name": "Middle East & North Africa",
+      "hdi": 0.676,
+      "exports_usd_k": 42462806.8699,
+      "trade_pct_gdp": 75.2906,
+      "fdi_inflows_pct_gdp": 1.0205,
+      "fdi_inflows_usd": 1638999697.2414,
+      "wealth_pc": 18852.4394
+    },
+    {
+      "id": "MDA",
+      "lat": 47.41,
+      "lon": 28.37,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.711,
+      "exports_usd_k": 4048616.803,
+      "trade_pct_gdp": 69.3394,
+      "fdi_inflows_pct_gdp": 2.5184,
+      "fdi_inflows_usd": 458365804.99,
+      "wealth_pc": 16307.8314
+    },
+    {
+      "id": "MDG",
+      "lat": -18.77,
+      "lon": 46.87,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.521,
+      "exports_usd_k": 3282849.5435,
+      "trade_pct_gdp": 42.5648,
+      "fdi_inflows_pct_gdp": 2.3725,
+      "fdi_inflows_usd": 413308770.0,
+      "wealth_pc": 6449.0159
+    },
+    {
+      "id": "MEX",
+      "lat": 23.63,
+      "lon": -102.55,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.767,
+      "exports_usd_k": 593707208.904,
+      "trade_pct_gdp": 67.9324,
+      "fdi_inflows_pct_gdp": 2.4421,
+      "fdi_inflows_usd": 45334306255.0,
+      "wealth_pc": 60426.0373
+    },
+    {
+      "id": "MKD",
+      "lat": 41.51,
+      "lon": 21.75,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.759,
+      "exports_usd_k": 8994857.5568,
+      "trade_pct_gdp": 120.2712,
+      "fdi_inflows_pct_gdp": 6.2345,
+      "fdi_inflows_usd": 1056844273.5412,
+      "wealth_pc": 38043.3684
+    },
+    {
+      "id": "MLI",
+      "lat": 17.57,
+      "lon": -4.0,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.427,
+      "exports_usd_k": 3643236.5121,
+      "trade_pct_gdp": 46.8674,
+      "fdi_inflows_pct_gdp": 2.6445,
+      "fdi_inflows_usd": 708592030.0,
+      "wealth_pc": 13781.372
+    },
+    {
+      "id": "MMR",
+      "lat": 21.91,
+      "lon": 95.96,
+      "region": "EAP",
+      "region_name": "East Asia & Pacific",
+      "hdi": 0.584,
+      "exports_usd_k": 14752993.0569,
+      "trade_pct_gdp": 36.9605,
+      "fdi_inflows_pct_gdp": 1.4788,
+      "fdi_inflows_usd": 1095317000.0,
+      "wealth_pc": null
+    },
+    {
+      "id": "MNE",
+      "lat": 42.71,
+      "lon": 19.37,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.816,
+      "exports_usd_k": 722520.2328,
+      "trade_pct_gdp": 61.2332,
+      "fdi_inflows_pct_gdp": 7.2482,
+      "fdi_inflows_usd": 599431454.9878,
+      "wealth_pc": 21929.1465
+    },
+    {
+      "id": "MNG",
+      "lat": 46.86,
+      "lon": 103.85,
+      "region": "EAP",
+      "region_name": "East Asia & Pacific",
+      "hdi": 0.735,
+      "exports_usd_k": 12557706.7063,
+      "trade_pct_gdp": 115.1441,
+      "fdi_inflows_pct_gdp": 11.6925,
+      "fdi_inflows_usd": 2782176220.4901,
+      "wealth_pc": 26536.4256
+    },
+    {
+      "id": "MOZ",
+      "lat": -18.67,
+      "lon": 35.53,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.446,
+      "exports_usd_k": 8275973.0,
+      "trade_pct_gdp": 76.5915,
+      "fdi_inflows_pct_gdp": 15.4257,
+      "fdi_inflows_usd": 3508626212.1685,
+      "wealth_pc": 5796.7401
+    },
+    {
+      "id": "MRT",
+      "lat": 21.01,
+      "lon": -10.94,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.527,
+      "exports_usd_k": 4065189.5544,
+      "trade_pct_gdp": 82.1412,
+      "fdi_inflows_pct_gdp": 13.2039,
+      "fdi_inflows_usd": 1440291135.4311,
+      "wealth_pc": 17519.5672
+    },
+    {
+      "id": "MUS",
+      "lat": -20.35,
+      "lon": 57.55,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.796,
+      "exports_usd_k": 1854239.1818,
+      "trade_pct_gdp": 61.6621,
+      "fdi_inflows_pct_gdp": 4.5607,
+      "fdi_inflows_usd": 681276230.0,
+      "wealth_pc": 66345.9808
+    },
+    {
+      "id": "MWI",
+      "lat": -13.25,
+      "lon": 34.3,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.485,
+      "exports_usd_k": 965509.3522,
+      "trade_pct_gdp": 37.2114,
+      "fdi_inflows_pct_gdp": 2.2796,
+      "fdi_inflows_usd": 257972995.4358,
+      "wealth_pc": 11077.4954
+    },
+    {
+      "id": "MYS",
+      "lat": 4.21,
+      "lon": 101.98,
+      "region": "EAP",
+      "region_name": "East Asia & Pacific",
+      "hdi": 0.804,
+      "exports_usd_k": 312605385.5816,
+      "trade_pct_gdp": 149.3921,
+      "fdi_inflows_pct_gdp": 3.6931,
+      "fdi_inflows_usd": 15593246086.7664,
+      "wealth_pc": 83373.8085
+    },
+    {
+      "id": "NAM",
+      "lat": -22.96,
+      "lon": 18.49,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.645,
+      "exports_usd_k": 5526025.5076,
+      "trade_pct_gdp": 115.3574,
+      "fdi_inflows_pct_gdp": 14.763,
+      "fdi_inflows_usd": 1974162486.9357,
+      "wealth_pc": 42128.5241
+    },
+    {
+      "id": "NER",
+      "lat": 17.61,
+      "lon": 8.08,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.377,
+      "exports_usd_k": 467426.2224,
+      "trade_pct_gdp": 22.5949,
+      "fdi_inflows_pct_gdp": 2.6487,
+      "fdi_inflows_usd": 526452650.0,
+      "wealth_pc": 7332.9355
+    },
+    {
+      "id": "NGA",
+      "lat": 9.08,
+      "lon": 8.68,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.534,
+      "exports_usd_k": 65129007.5479,
+      "trade_pct_gdp": 37.494,
+      "fdi_inflows_pct_gdp": 0.4283,
+      "fdi_inflows_usd": 1080310701.183,
+      "wealth_pc": 18702.0391
+    },
+    {
+      "id": "NIC",
+      "lat": 12.87,
+      "lon": -85.21,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.651,
+      "exports_usd_k": 7378486.427,
+      "trade_pct_gdp": 96.4254,
+      "fdi_inflows_pct_gdp": 6.8666,
+      "fdi_inflows_usd": 1352300000.0,
+      "wealth_pc": 17383.8983
+    },
+    {
+      "id": "NLD",
+      "lat": 52.13,
+      "lon": 5.29,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.934,
+      "exports_usd_k": 734008093.3753,
+      "trade_pct_gdp": 142.8284,
+      "fdi_inflows_pct_gdp": -1.404,
+      "fdi_inflows_usd": -17058018836.8683,
+      "wealth_pc": 654498.3452
+    },
+    {
+      "id": "NOR",
+      "lat": 60.47,
+      "lon": 8.47,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.954,
+      "exports_usd_k": 177196076.8209,
+      "trade_pct_gdp": 55.3569,
+      "fdi_inflows_pct_gdp": 2.3873,
+      "fdi_inflows_usd": 11544963351.086,
+      "wealth_pc": 1111609.7121
+    },
+    {
+      "id": "NPL",
+      "lat": 28.39,
+      "lon": 84.12,
+      "region": "SAS",
+      "region_name": "South Asia",
+      "hdi": 0.579,
+      "exports_usd_k": 1300469.7565,
+      "trade_pct_gdp": 31.7657,
+      "fdi_inflows_pct_gdp": 0.1326,
+      "fdi_inflows_usd": 56900207.0648,
+      "wealth_pc": 12817.1707
+    },
+    {
+      "id": "NZL",
+      "lat": -40.9,
+      "lon": 174.89,
+      "region": "EAP",
+      "region_name": "East Asia & Pacific",
+      "hdi": 0.921,
+      "exports_usd_k": 42124240.556,
+      "trade_pct_gdp": 34.2661,
+      "fdi_inflows_pct_gdp": 0.6764,
+      "fdi_inflows_usd": 1759833655.1709,
+      "wealth_pc": 591676.7802
+    },
+    {
+      "id": "OMN",
+      "lat": 21.51,
+      "lon": 55.92,
+      "region": "MNA",
+      "region_name": "Middle East & North Africa",
+      "hdi": 0.834,
+      "exports_usd_k": 59010531.4577,
+      "trade_pct_gdp": 99.3866,
+      "fdi_inflows_pct_gdp": 11.6351,
+      "fdi_inflows_usd": 12465539661.8985,
+      "wealth_pc": 113244.2446
+    },
+    {
+      "id": "PAK",
+      "lat": 30.38,
+      "lon": 69.35,
+      "region": "SAS",
+      "region_name": "South Asia",
+      "hdi": 0.56,
+      "exports_usd_k": 28746392.4439,
+      "trade_pct_gdp": 23.8902,
+      "fdi_inflows_pct_gdp": 0.7167,
+      "fdi_inflows_usd": 2663000000.0,
+      "wealth_pc": 10443.0191
+    },
+    {
+      "id": "PAN",
+      "lat": 8.54,
+      "lon": -80.78,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.795,
+      "exports_usd_k": 3366820.48,
+      "trade_pct_gdp": 46.0774,
+      "fdi_inflows_pct_gdp": 3.7451,
+      "fdi_inflows_usd": 3240411694.0,
+      "wealth_pc": 80305.7972
+    },
+    {
+      "id": "PER",
+      "lat": -9.19,
+      "lon": -75.02,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.759,
+      "exports_usd_k": 64355040.435,
+      "trade_pct_gdp": 44.3182,
+      "fdi_inflows_pct_gdp": 2.3509,
+      "fdi_inflows_usd": 6799395299.7566,
+      "wealth_pc": 55219.4668
+    },
+    {
+      "id": "PHL",
+      "lat": 12.88,
+      "lon": 121.77,
+      "region": "EAP",
+      "region_name": "East Asia & Pacific",
+      "hdi": 0.712,
+      "exports_usd_k": 72923284.86,
+      "trade_pct_gdp": 45.0299,
+      "fdi_inflows_pct_gdp": 2.045,
+      "fdi_inflows_usd": 9440028898.6428,
+      "wealth_pc": 24691.9279
+    },
+    {
+      "id": "PNG",
+      "lat": -6.31,
+      "lon": 143.96,
+      "region": "EAP",
+      "region_name": "East Asia & Pacific",
+      "hdi": 0.543,
+      "exports_usd_k": 9650541.0175,
+      "trade_pct_gdp": 56.8609,
+      "fdi_inflows_pct_gdp": -0.6236,
+      "fdi_inflows_usd": -198317385.7503,
+      "wealth_pc": 32977.596
+    },
+    {
+      "id": "POL",
+      "lat": 51.92,
+      "lon": 19.15,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.872,
+      "exports_usd_k": 381932840.227,
+      "trade_pct_gdp": 82.7419,
+      "fdi_inflows_pct_gdp": 2.2452,
+      "fdi_inflows_usd": 20606000000.0,
+      "wealth_pc": 109811.6419
+    },
+    {
+      "id": "PRT",
+      "lat": 39.4,
+      "lon": -8.22,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.85,
+      "exports_usd_k": 83624882.3579,
+      "trade_pct_gdp": 64.4911,
+      "fdi_inflows_pct_gdp": 4.305,
+      "fdi_inflows_usd": 13486433394.8596,
+      "wealth_pc": 152428.7511
+    },
+    {
+      "id": "PRY",
+      "lat": -23.44,
+      "lon": -58.44,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.724,
+      "exports_usd_k": 11890536.8018,
+      "trade_pct_gdp": 63.1831,
+      "fdi_inflows_pct_gdp": 0.8996,
+      "fdi_inflows_usd": 399928218.942,
+      "wealth_pc": 54914.6869
+    },
+    {
+      "id": "PSE",
+      "lat": 31.95,
+      "lon": 35.23,
+      "region": "MNA",
+      "region_name": "Middle East & North Africa",
+      "hdi": 0.69,
+      "exports_usd_k": null,
+      "trade_pct_gdp": null,
+      "fdi_inflows_pct_gdp": 1.1828,
+      "fdi_inflows_usd": 162176714.1372,
+      "wealth_pc": null
+    },
+    {
+      "id": "QAT",
+      "lat": 25.35,
+      "lon": 51.18,
+      "region": "MNA",
+      "region_name": "Middle East & North Africa",
+      "hdi": 0.848,
+      "exports_usd_k": 97751493.9961,
+      "trade_pct_gdp": 59.3568,
+      "fdi_inflows_pct_gdp": 0.21,
+      "fdi_inflows_usd": 460164835.1648,
+      "wealth_pc": 692127.7962
+    },
+    {
+      "id": "ROU",
+      "lat": 45.94,
+      "lon": 24.97,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.816,
+      "exports_usd_k": 100642462.6764,
+      "trade_pct_gdp": 61.8795,
+      "fdi_inflows_pct_gdp": 1.8713,
+      "fdi_inflows_usd": 7159113565.9297,
+      "wealth_pc": 71783.0282
+    },
+    {
+      "id": "RUS",
+      "lat": 61.52,
+      "lon": 105.32,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.824,
+      "exports_usd_k": 492313790.6967,
+      "trade_pct_gdp": 33.7291,
+      "fdi_inflows_pct_gdp": -0.4387,
+      "fdi_inflows_usd": -9537180000.0,
+      "wealth_pc": 113627.4001
+    },
+    {
+      "id": "RWA",
+      "lat": -1.94,
+      "lon": 29.87,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.536,
+      "exports_usd_k": 2019269.8019,
+      "trade_pct_gdp": 64.7574,
+      "fdi_inflows_pct_gdp": 4.0201,
+      "fdi_inflows_usd": 572929300.0141,
+      "wealth_pc": 10715.4292
+    },
+    {
+      "id": "SAU",
+      "lat": 23.89,
+      "lon": 45.08,
+      "region": "MNA",
+      "region_name": "Middle East & North Africa",
+      "hdi": 0.857,
+      "exports_usd_k": 320018426.7291,
+      "trade_pct_gdp": 43.4185,
+      "fdi_inflows_pct_gdp": 1.721,
+      "fdi_inflows_usd": 21337562069.6656,
+      "wealth_pc": 113548.7501
+    },
+    {
+      "id": "SDN",
+      "lat": 12.86,
+      "lon": 30.22,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.508,
+      "exports_usd_k": 3619251.504,
+      "trade_pct_gdp": 16.1961,
+      "fdi_inflows_pct_gdp": 0.0,
+      "fdi_inflows_usd": 0.0,
+      "wealth_pc": 6806.2091
+    },
+    {
+      "id": "SEN",
+      "lat": 14.5,
+      "lon": -14.45,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.514,
+      "exports_usd_k": 5316892.8339,
+      "trade_pct_gdp": 55.5108,
+      "fdi_inflows_pct_gdp": 6.1461,
+      "fdi_inflows_usd": 2016428880.0,
+      "wealth_pc": 15576.9824
+    },
+    {
+      "id": "SGP",
+      "lat": 1.35,
+      "lon": 103.82,
+      "region": "EAP",
+      "region_name": "East Asia & Pacific",
+      "hdi": 0.935,
+      "exports_usd_k": 475348541.1268,
+      "trade_pct_gdp": 176.1724,
+      "fdi_inflows_pct_gdp": 27.7576,
+      "fdi_inflows_usd": 151941202883.727,
+      "wealth_pc": 656348.4838
+    },
+    {
+      "id": "SLE",
+      "lat": 8.46,
+      "lon": -11.78,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.438,
+      "exports_usd_k": 205368.2843,
+      "trade_pct_gdp": 51.4121,
+      "fdi_inflows_pct_gdp": 3.9305,
+      "fdi_inflows_usd": 274000000.0,
+      "wealth_pc": 9006.0879
+    },
+    {
+      "id": "SLV",
+      "lat": 13.79,
+      "lon": -88.9,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.667,
+      "exports_usd_k": 6498092.242,
+      "trade_pct_gdp": 63.3989,
+      "fdi_inflows_pct_gdp": 2.6124,
+      "fdi_inflows_usd": 923880785.12,
+      "wealth_pc": 23757.527
+    },
+    {
+      "id": "SRB",
+      "lat": 44.02,
+      "lon": 21.01,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.799,
+      "exports_usd_k": null,
+      "trade_pct_gdp": 81.9454,
+      "fdi_inflows_pct_gdp": 6.2017,
+      "fdi_inflows_usd": 5587596147.5721,
+      "wealth_pc": 36759.0517
+    },
+    {
+      "id": "SSD",
+      "lat": 6.88,
+      "lon": 31.31,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.413,
+      "exports_usd_k": null,
+      "trade_pct_gdp": 31.925,
+      "fdi_inflows_pct_gdp": 0.0013,
+      "fdi_inflows_usd": 83417020.0,
+      "wealth_pc": null
+    },
+    {
+      "id": "SVK",
+      "lat": 48.67,
+      "lon": 19.7,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.857,
+      "exports_usd_k": 117250176.701,
+      "trade_pct_gdp": 162.2049,
+      "fdi_inflows_pct_gdp": 3.555,
+      "fdi_inflows_usd": 5010258031.6387,
+      "wealth_pc": 133385.7626
+    },
+    {
+      "id": "SVN",
+      "lat": 46.15,
+      "lon": 14.99,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.902,
+      "exports_usd_k": 59506954.9777,
+      "trade_pct_gdp": 223.9146,
+      "fdi_inflows_pct_gdp": 2.5588,
+      "fdi_inflows_usd": 1867182324.3817,
+      "wealth_pc": 234382.0295
+    },
+    {
+      "id": "SWE",
+      "lat": 60.13,
+      "lon": 18.64,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.937,
+      "exports_usd_k": 197533884.1552,
+      "trade_pct_gdp": 63.7632,
+      "fdi_inflows_pct_gdp": 5.2347,
+      "fdi_inflows_usd": 31602836368.4031,
+      "wealth_pc": 679398.3843
+    },
+    {
+      "id": "SWZ",
+      "lat": -26.52,
+      "lon": 31.47,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.608,
+      "exports_usd_k": 2095601.7091,
+      "trade_pct_gdp": 90.5352,
+      "fdi_inflows_pct_gdp": 1.5545,
+      "fdi_inflows_usd": 75530848.9589,
+      "wealth_pc": 33323.5838
+    },
+    {
+      "id": "SYR",
+      "lat": 34.8,
+      "lon": 38.99,
+      "region": "MNA",
+      "region_name": "Middle East & North Africa",
+      "hdi": 0.549,
+      "exports_usd_k": 11352923.632,
+      "trade_pct_gdp": 44.866,
+      "fdi_inflows_pct_gdp": 0.0,
+      "fdi_inflows_usd": 0.0,
+      "wealth_pc": null
+    },
+    {
+      "id": "TCD",
+      "lat": 15.45,
+      "lon": 18.73,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.401,
+      "exports_usd_k": null,
+      "trade_pct_gdp": 33.8135,
+      "fdi_inflows_pct_gdp": 5.2231,
+      "fdi_inflows_usd": 1019486410.0,
+      "wealth_pc": 6109.7452
+    },
+    {
+      "id": "TGO",
+      "lat": 8.62,
+      "lon": 1.21,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.513,
+      "exports_usd_k": 1455558.4353,
+      "trade_pct_gdp": 47.9196,
+      "fdi_inflows_pct_gdp": 0.7863,
+      "fdi_inflows_usd": 83754750.0,
+      "wealth_pc": 18120.0094
+    },
+    {
+      "id": "THA",
+      "lat": 15.87,
+      "lon": 100.99,
+      "region": "EAP",
+      "region_name": "East Asia & Pacific",
+      "hdi": 0.765,
+      "exports_usd_k": 285074082.0286,
+      "trade_pct_gdp": 115.3502,
+      "fdi_inflows_pct_gdp": 2.7164,
+      "fdi_inflows_usd": 14302158846.415,
+      "wealth_pc": 63462.3557
+    },
+    {
+      "id": "TJK",
+      "lat": 38.86,
+      "lon": 71.28,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.656,
+      "exports_usd_k": 1260585.22,
+      "trade_pct_gdp": 63.0571,
+      "fdi_inflows_pct_gdp": 2.0508,
+      "fdi_inflows_usd": 291312572.5784,
+      "wealth_pc": 12797.7024
+    },
+    {
+      "id": "TKM",
+      "lat": 38.97,
+      "lon": 59.56,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.71,
+      "exports_usd_k": 2505545.544,
+      "trade_pct_gdp": 31.5351,
+      "fdi_inflows_pct_gdp": 3.2007,
+      "fdi_inflows_usd": 1644770160.0,
+      "wealth_pc": null
+    },
+    {
+      "id": "TTO",
+      "lat": 10.69,
+      "lon": -61.22,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.799,
+      "exports_usd_k": 7863534.5226,
+      "trade_pct_gdp": 60.7329,
+      "fdi_inflows_pct_gdp": -1.7678,
+      "fdi_inflows_usd": -453157051.5989,
+      "wealth_pc": 70704.0358
+    },
+    {
+      "id": "TUN",
+      "lat": 33.89,
+      "lon": 9.54,
+      "region": "MNA",
+      "region_name": "Middle East & North Africa",
+      "hdi": 0.739,
+      "exports_usd_k": 20039655.6229,
+      "trade_pct_gdp": 89.5538,
+      "fdi_inflows_pct_gdp": 1.4798,
+      "fdi_inflows_usd": 759601641.1987,
+      "wealth_pc": 21049.5565
+    },
+    {
+      "id": "TUR",
+      "lat": 38.96,
+      "lon": 35.24,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.807,
+      "exports_usd_k": 255627429.011,
+      "trade_pct_gdp": 44.5738,
+      "fdi_inflows_pct_gdp": 0.864,
+      "fdi_inflows_usd": 11743000000.0,
+      "wealth_pc": 46155.5471
+    },
+    {
+      "id": "TZA",
+      "lat": -6.37,
+      "lon": 34.89,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.528,
+      "exports_usd_k": 7274328.7879,
+      "trade_pct_gdp": 29.1473,
+      "fdi_inflows_pct_gdp": 2.1784,
+      "fdi_inflows_usd": 1717575169.471,
+      "wealth_pc": 12566.2162
+    },
+    {
+      "id": "UGA",
+      "lat": 1.37,
+      "lon": 32.29,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.528,
+      "exports_usd_k": 6305023.2863,
+      "trade_pct_gdp": 40.9928,
+      "fdi_inflows_pct_gdp": 6.0441,
+      "fdi_inflows_usd": 3258515378.4379,
+      "wealth_pc": 10500.0082
+    },
+    {
+      "id": "UKR",
+      "lat": 48.38,
+      "lon": 31.17,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.75,
+      "exports_usd_k": 36185539.4988,
+      "trade_pct_gdp": 58.1447,
+      "fdi_inflows_pct_gdp": 2.1065,
+      "fdi_inflows_usd": 4018000000.0,
+      "wealth_pc": 28679.8989
+    },
+    {
+      "id": "URY",
+      "lat": -32.52,
+      "lon": -55.77,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.808,
+      "exports_usd_k": 9192776.209,
+      "trade_pct_gdp": 28.1134,
+      "fdi_inflows_pct_gdp": -4.8853,
+      "fdi_inflows_usd": -3955242643.5951,
+      "wealth_pc": 159409.2181
+    },
+    {
+      "id": "USA",
+      "lat": 37.09,
+      "lon": -95.71,
+      "region": "NAC",
+      "region_name": "North America",
+      "hdi": 0.92,
+      "exports_usd_k": 2018542583.771,
+      "trade_pct_gdp": 18.8673,
+      "fdi_inflows_pct_gdp": 1.0332,
+      "fdi_inflows_usd": 297058000000.0,
+      "wealth_pc": 742693.2478
+    },
+    {
+      "id": "UZB",
+      "lat": 41.38,
+      "lon": 64.59,
+      "region": "ECA",
+      "region_name": "Europe & Central Asia",
+      "hdi": 0.71,
+      "exports_usd_k": 21016916.9743,
+      "trade_pct_gdp": 47.8249,
+      "fdi_inflows_pct_gdp": 2.4805,
+      "fdi_inflows_usd": 2851690034.0948,
+      "wealth_pc": null
+    },
+    {
+      "id": "VEN",
+      "lat": 6.42,
+      "lon": -66.59,
+      "region": "LAC",
+      "region_name": "Latin America & Caribbean",
+      "hdi": 0.726,
+      "exports_usd_k": 87961213.304,
+      "trade_pct_gdp": 24.39,
+      "fdi_inflows_pct_gdp": 1.3627,
+      "fdi_inflows_usd": 1632583330.0,
+      "wealth_pc": null
+    },
+    {
+      "id": "VNM",
+      "lat": 14.06,
+      "lon": 108.28,
+      "region": "EAP",
+      "region_name": "East Asia & Pacific",
+      "hdi": 0.693,
+      "exports_usd_k": 353077513.296,
+      "trade_pct_gdp": 164.8527,
+      "fdi_inflows_pct_gdp": 4.2339,
+      "fdi_inflows_usd": 20170000000.0,
+      "wealth_pc": 33066.9819
+    },
+    {
+      "id": "XKX",
+      "lat": 42.6,
+      "lon": 20.9,
+      "region": "Other",
+      "region_name": "Other",
+      "hdi": null,
+      "exports_usd_k": null,
+      "trade_pct_gdp": null,
+      "fdi_inflows_pct_gdp": 7.6788,
+      "fdi_inflows_usd": 859811341.9656,
+      "wealth_pc": null
+    },
+    {
+      "id": "YEM",
+      "lat": 15.55,
+      "lon": 48.52,
+      "region": "MNA",
+      "region_name": "Middle East & North Africa",
+      "hdi": 0.463,
+      "exports_usd_k": 23783.5533,
+      "trade_pct_gdp": 24.0257,
+      "fdi_inflows_pct_gdp": -1.3056,
+      "fdi_inflows_usd": 0.0,
+      "wealth_pc": null
+    },
+    {
+      "id": "ZAF",
+      "lat": -30.56,
+      "lon": 22.94,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.705,
+      "exports_usd_k": 110607523.8845,
+      "trade_pct_gdp": 58.2196,
+      "fdi_inflows_pct_gdp": 0.5809,
+      "fdi_inflows_usd": 2330218039.3203,
+      "wealth_pc": 45637.5855
+    },
+    {
+      "id": "ZMB",
+      "lat": -13.13,
+      "lon": 27.85,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.591,
+      "exports_usd_k": 10431183.7156,
+      "trade_pct_gdp": 88.4948,
+      "fdi_inflows_pct_gdp": 4.656,
+      "fdi_inflows_usd": 1178117112.8712,
+      "wealth_pc": 16050.1751
+    },
+    {
+      "id": "ZWE",
+      "lat": -19.02,
+      "lon": 29.15,
+      "region": "SSA",
+      "region_name": "Sub-Saharan Africa",
+      "hdi": 0.563,
+      "exports_usd_k": 7225585.9533,
+      "trade_pct_gdp": 40.7589,
+      "fdi_inflows_pct_gdp": 1.1205,
+      "fdi_inflows_usd": 465433000.0,
+      "wealth_pc": 15191.2027
+    }
+  ],
+  "connections": [
+    {
+      "source": "CHN",
+      "target": "USA",
+      "value": 2018542583.771,
+      "type": "hub-hub"
+    },
+    {
+      "source": "CHN",
+      "target": "DEU",
+      "value": 1725527288.3545,
+      "type": "hub-hub"
+    },
+    {
+      "source": "CHN",
+      "target": "NLD",
+      "value": 734008093.3753,
+      "type": "hub-hub"
+    },
+    {
+      "source": "CHN",
+      "target": "ITA",
+      "value": 677095229.0009,
+      "type": "hub-hub"
+    },
+    {
+      "source": "CHN",
+      "target": "FRA",
+      "value": 640201369.7803,
+      "type": "hub-hub"
+    },
+    {
+      "source": "CHN",
+      "target": "MEX",
+      "value": 593707208.904,
+      "type": "hub-hub"
+    },
+    {
+      "source": "CHN",
+      "target": "ARE",
+      "value": 570245383.5845,
+      "type": "hub-hub"
+    },
+    {
+      "source": "CHN",
+      "target": "CAN",
+      "value": 567344538.0035,
+      "type": "hub-hub"
+    },
+    {
+      "source": "CHN",
+      "target": "GBR",
+      "value": 521207222.9553,
+      "type": "hub-hub"
+    },
+    {
+      "source": "CHN",
+      "target": "RUS",
+      "value": 492313790.6967,
+      "type": "hub-hub"
+    },
+    {
+      "source": "USA",
+      "target": "DEU",
+      "value": 1725527288.3545,
+      "type": "hub-hub"
+    },
+    {
+      "source": "USA",
+      "target": "NLD",
+      "value": 734008093.3753,
+      "type": "hub-hub"
+    },
+    {
+      "source": "USA",
+      "target": "JPN",
+      "value": 717946392.1391,
+      "type": "hub-hub"
+    },
+    {
+      "source": "USA",
+      "target": "ITA",
+      "value": 677095229.0009,
+      "type": "hub-hub"
+    },
+    {
+      "source": "USA",
+      "target": "FRA",
+      "value": 640201369.7803,
+      "type": "hub-hub"
+    },
+    {
+      "source": "USA",
+      "target": "KOR",
+      "value": 631804230.615,
+      "type": "hub-hub"
+    },
+    {
+      "source": "USA",
+      "target": "MEX",
+      "value": 593707208.904,
+      "type": "hub-hub"
+    },
+    {
+      "source": "USA",
+      "target": "HKG",
+      "value": 575044377.6458,
+      "type": "hub-hub"
+    },
+    {
+      "source": "USA",
+      "target": "ARE",
+      "value": 570245383.5845,
+      "type": "hub-hub"
+    },
+    {
+      "source": "USA",
+      "target": "GBR",
+      "value": 521207222.9553,
+      "type": "hub-hub"
+    },
+    {
+      "source": "USA",
+      "target": "RUS",
+      "value": 492313790.6967,
+      "type": "hub-hub"
+    },
+    {
+      "source": "USA",
+      "target": "SGP",
+      "value": 475348541.1268,
+      "type": "hub-hub"
+    },
+    {
+      "source": "DEU",
+      "target": "JPN",
+      "value": 717946392.1391,
+      "type": "hub-hub"
+    },
+    {
+      "source": "DEU",
+      "target": "KOR",
+      "value": 631804230.615,
+      "type": "hub-hub"
+    },
+    {
+      "source": "DEU",
+      "target": "MEX",
+      "value": 593707208.904,
+      "type": "hub-hub"
+    },
+    {
+      "source": "DEU",
+      "target": "HKG",
+      "value": 575044377.6458,
+      "type": "hub-hub"
+    },
+    {
+      "source": "DEU",
+      "target": "ARE",
+      "value": 570245383.5845,
+      "type": "hub-hub"
+    },
+    {
+      "source": "DEU",
+      "target": "CAN",
+      "value": 567344538.0035,
+      "type": "hub-hub"
+    },
+    {
+      "source": "DEU",
+      "target": "SGP",
+      "value": 475348541.1268,
+      "type": "hub-hub"
+    },
+    {
+      "source": "NLD",
+      "target": "JPN",
+      "value": 717946392.1391,
+      "type": "hub-hub"
+    },
+    {
+      "source": "NLD",
+      "target": "KOR",
+      "value": 631804230.615,
+      "type": "hub-hub"
+    },
+    {
+      "source": "NLD",
+      "target": "MEX",
+      "value": 593707208.904,
+      "type": "hub-hub"
+    },
+    {
+      "source": "NLD",
+      "target": "HKG",
+      "value": 575044377.6458,
+      "type": "hub-hub"
+    },
+    {
+      "source": "NLD",
+      "target": "ARE",
+      "value": 570245383.5845,
+      "type": "hub-hub"
+    },
+    {
+      "source": "NLD",
+      "target": "CAN",
+      "value": 567344538.0035,
+      "type": "hub-hub"
+    },
+    {
+      "source": "NLD",
+      "target": "SGP",
+      "value": 475348541.1268,
+      "type": "hub-hub"
+    },
+    {
+      "source": "JPN",
+      "target": "ITA",
+      "value": 677095229.0009,
+      "type": "hub-hub"
+    },
+    {
+      "source": "JPN",
+      "target": "FRA",
+      "value": 640201369.7803,
+      "type": "hub-hub"
+    },
+    {
+      "source": "JPN",
+      "target": "MEX",
+      "value": 593707208.904,
+      "type": "hub-hub"
+    },
+    {
+      "source": "JPN",
+      "target": "ARE",
+      "value": 570245383.5845,
+      "type": "hub-hub"
+    },
+    {
+      "source": "JPN",
+      "target": "CAN",
+      "value": 567344538.0035,
+      "type": "hub-hub"
+    },
+    {
+      "source": "JPN",
+      "target": "GBR",
+      "value": 521207222.9553,
+      "type": "hub-hub"
+    },
+    {
+      "source": "JPN",
+      "target": "RUS",
+      "value": 492313790.6967,
+      "type": "hub-hub"
+    },
+    {
+      "source": "ITA",
+      "target": "KOR",
+      "value": 631804230.615,
+      "type": "hub-hub"
+    },
+    {
+      "source": "ITA",
+      "target": "MEX",
+      "value": 593707208.904,
+      "type": "hub-hub"
+    },
+    {
+      "source": "ITA",
+      "target": "HKG",
+      "value": 575044377.6458,
+      "type": "hub-hub"
+    },
+    {
+      "source": "ITA",
+      "target": "ARE",
+      "value": 570245383.5845,
+      "type": "hub-hub"
+    },
+    {
+      "source": "ITA",
+      "target": "CAN",
+      "value": 567344538.0035,
+      "type": "hub-hub"
+    },
+    {
+      "source": "ITA",
+      "target": "SGP",
+      "value": 475348541.1268,
+      "type": "hub-hub"
+    },
+    {
+      "source": "FRA",
+      "target": "KOR",
+      "value": 631804230.615,
+      "type": "hub-hub"
+    },
+    {
+      "source": "FRA",
+      "target": "MEX",
+      "value": 593707208.904,
+      "type": "hub-hub"
+    },
+    {
+      "source": "FRA",
+      "target": "HKG",
+      "value": 575044377.6458,
+      "type": "hub-hub"
+    },
+    {
+      "source": "FRA",
+      "target": "ARE",
+      "value": 570245383.5845,
+      "type": "hub-hub"
+    },
+    {
+      "source": "FRA",
+      "target": "CAN",
+      "value": 567344538.0035,
+      "type": "hub-hub"
+    },
+    {
+      "source": "FRA",
+      "target": "SGP",
+      "value": 475348541.1268,
+      "type": "hub-hub"
+    },
+    {
+      "source": "KOR",
+      "target": "MEX",
+      "value": 593707208.904,
+      "type": "hub-hub"
+    },
+    {
+      "source": "KOR",
+      "target": "ARE",
+      "value": 570245383.5845,
+      "type": "hub-hub"
+    },
+    {
+      "source": "KOR",
+      "target": "CAN",
+      "value": 567344538.0035,
+      "type": "hub-hub"
+    },
+    {
+      "source": "KOR",
+      "target": "GBR",
+      "value": 521207222.9553,
+      "type": "hub-hub"
+    },
+    {
+      "source": "KOR",
+      "target": "RUS",
+      "value": 492313790.6967,
+      "type": "hub-hub"
+    },
+    {
+      "source": "MEX",
+      "target": "HKG",
+      "value": 575044377.6458,
+      "type": "hub-hub"
+    },
+    {
+      "source": "MEX",
+      "target": "ARE",
+      "value": 570245383.5845,
+      "type": "hub-hub"
+    },
+    {
+      "source": "MEX",
+      "target": "CAN",
+      "value": 567344538.0035,
+      "type": "hub-hub"
+    },
+    {
+      "source": "MEX",
+      "target": "GBR",
+      "value": 521207222.9553,
+      "type": "hub-hub"
+    },
+    {
+      "source": "MEX",
+      "target": "RUS",
+      "value": 492313790.6967,
+      "type": "hub-hub"
+    },
+    {
+      "source": "MEX",
+      "target": "SGP",
+      "value": 475348541.1268,
+      "type": "hub-hub"
+    },
+    {
+      "source": "HKG",
+      "target": "ARE",
+      "value": 570245383.5845,
+      "type": "hub-hub"
+    },
+    {
+      "source": "HKG",
+      "target": "CAN",
+      "value": 567344538.0035,
+      "type": "hub-hub"
+    },
+    {
+      "source": "HKG",
+      "target": "GBR",
+      "value": 521207222.9553,
+      "type": "hub-hub"
+    },
+    {
+      "source": "HKG",
+      "target": "RUS",
+      "value": 492313790.6967,
+      "type": "hub-hub"
+    },
+    {
+      "source": "ARE",
+      "target": "CAN",
+      "value": 567344538.0035,
+      "type": "hub-hub"
+    },
+    {
+      "source": "ARE",
+      "target": "GBR",
+      "value": 521207222.9553,
+      "type": "hub-hub"
+    },
+    {
+      "source": "ARE",
+      "target": "RUS",
+      "value": 492313790.6967,
+      "type": "hub-hub"
+    },
+    {
+      "source": "ARE",
+      "target": "SGP",
+      "value": 475348541.1268,
+      "type": "hub-hub"
+    },
+    {
+      "source": "CAN",
+      "target": "GBR",
+      "value": 521207222.9553,
+      "type": "hub-hub"
+    },
+    {
+      "source": "CAN",
+      "target": "RUS",
+      "value": 492313790.6967,
+      "type": "hub-hub"
+    },
+    {
+      "source": "CAN",
+      "target": "SGP",
+      "value": 475348541.1268,
+      "type": "hub-hub"
+    },
+    {
+      "source": "GBR",
+      "target": "SGP",
+      "value": 475348541.1268,
+      "type": "hub-hub"
+    },
+    {
+      "source": "RUS",
+      "target": "SGP",
+      "value": 475348541.1268,
+      "type": "hub-hub"
+    },
+    {
+      "source": "AUS",
+      "target": "RUS",
+      "value": 369235124.1591,
+      "type": "spoke"
+    },
+    {
+      "source": "VNM",
+      "target": "RUS",
+      "value": 353077513.296,
+      "type": "spoke"
+    },
+    {
+      "source": "MYS",
+      "target": "ARE",
+      "value": 312605385.5816,
+      "type": "spoke"
+    },
+    {
+      "source": "THA",
+      "target": "RUS",
+      "value": 285074082.0286,
+      "type": "spoke"
+    },
+    {
+      "source": "IDN",
+      "target": "RUS",
+      "value": 258774386.645,
+      "type": "spoke"
+    },
+    {
+      "source": "ESP",
+      "target": "ARE",
+      "value": 420169591.0025,
+      "type": "spoke"
+    },
+    {
+      "source": "CHE",
+      "target": "ARE",
+      "value": 419922543.4235,
+      "type": "spoke"
+    },
+    {
+      "source": "BEL",
+      "target": "ARE",
+      "value": 393157732.8964,
+      "type": "spoke"
+    },
+    {
+      "source": "POL",
+      "target": "ARE",
+      "value": 381932840.227,
+      "type": "spoke"
+    },
+    {
+      "source": "TUR",
+      "target": "ARE",
+      "value": 255627429.011,
+      "type": "spoke"
+    },
+    {
+      "source": "BRA",
+      "target": "USA",
+      "value": 339695766.008,
+      "type": "spoke"
+    },
+    {
+      "source": "CHL",
+      "target": "USA",
+      "value": 94935525.0079,
+      "type": "spoke"
+    },
+    {
+      "source": "VEN",
+      "target": "USA",
+      "value": 87961213.304,
+      "type": "spoke"
+    },
+    {
+      "source": "ARG",
+      "target": "USA",
+      "value": 66788515.9863,
+      "type": "spoke"
+    },
+    {
+      "source": "PER",
+      "target": "USA",
+      "value": 64355040.435,
+      "type": "spoke"
+    },
+    {
+      "source": "SAU",
+      "target": "ITA",
+      "value": 320018426.7291,
+      "type": "spoke"
+    },
+    {
+      "source": "QAT",
+      "target": "ITA",
+      "value": 97751493.9961,
+      "type": "spoke"
+    },
+    {
+      "source": "IRQ",
+      "target": "ITA",
+      "value": 84506036.565,
+      "type": "spoke"
+    },
+    {
+      "source": "KWT",
+      "target": "ITA",
+      "value": 83979908.8279,
+      "type": "spoke"
+    },
+    {
+      "source": "IRN",
+      "target": "ITA",
+      "value": 80900398.2518,
+      "type": "spoke"
+    },
+    {
+      "source": "IND",
+      "target": "ARE",
+      "value": 431411977.2113,
+      "type": "spoke"
+    },
+    {
+      "source": "BGD",
+      "target": "CHN",
+      "value": 31734162.419,
+      "type": "spoke"
+    },
+    {
+      "source": "PAK",
+      "target": "ARE",
+      "value": 28746392.4439,
+      "type": "spoke"
+    },
+    {
+      "source": "LKA",
+      "target": "SGP",
+      "value": 12052497.5489,
+      "type": "spoke"
+    },
+    {
+      "source": "NPL",
+      "target": "CHN",
+      "value": 1300469.7565,
+      "type": "spoke"
+    },
+    {
+      "source": "ZAF",
+      "target": "ARE",
+      "value": 110607523.8845,
+      "type": "spoke"
+    },
+    {
+      "source": "NGA",
+      "target": "ITA",
+      "value": 65129007.5479,
+      "type": "spoke"
+    },
+    {
+      "source": "AGO",
+      "target": "ARE",
+      "value": 39505783.2087,
+      "type": "spoke"
+    },
+    {
+      "source": "COD",
+      "target": "ARE",
+      "value": 27726829.3728,
+      "type": "spoke"
+    },
+    {
+      "source": "CIV",
+      "target": "ITA",
+      "value": 18350163.6185,
+      "type": "spoke"
+    }
+  ],
+  "network_links": [
+    {
+      "source": "IND",
+      "target": "BGD",
+      "region": "SAS"
+    },
+    {
+      "source": "BGD",
+      "target": "PAK",
+      "region": "SAS"
+    },
+    {
+      "source": "LKA",
+      "target": "IND",
+      "region": "SAS"
+    },
+    {
+      "source": "NPL",
+      "target": "IND",
+      "region": "SAS"
+    },
+    {
+      "source": "AFG",
+      "target": "PAK",
+      "region": "SAS"
+    },
+    {
+      "source": "BTN",
+      "target": "IND",
+      "region": "SAS"
+    },
+    {
+      "source": "ZAF",
+      "target": "AGO",
+      "region": "SSA"
+    },
+    {
+      "source": "NGA",
+      "target": "AGO",
+      "region": "SSA"
+    },
+    {
+      "source": "COD",
+      "target": "ZAF",
+      "region": "SSA"
+    },
+    {
+      "source": "CIV",
+      "target": "NGA",
+      "region": "SSA"
+    },
+    {
+      "source": "GHA",
+      "target": "NGA",
+      "region": "SSA"
+    },
+    {
+      "source": "GAB",
+      "target": "ZAF",
+      "region": "SSA"
+    },
+    {
+      "source": "ZMB",
+      "target": "ZAF",
+      "region": "SSA"
+    },
+    {
+      "source": "COG",
+      "target": "ZAF",
+      "region": "SSA"
+    },
+    {
+      "source": "MOZ",
+      "target": "ZAF",
+      "region": "SSA"
+    },
+    {
+      "source": "TZA",
+      "target": "NGA",
+      "region": "SSA"
+    },
+    {
+      "source": "ZWE",
+      "target": "NGA",
+      "region": "SSA"
+    },
+    {
+      "source": "KEN",
+      "target": "NGA",
+      "region": "SSA"
+    },
+    {
+      "source": "UGA",
+      "target": "NGA",
+      "region": "SSA"
+    },
+    {
+      "source": "NAM",
+      "target": "ZAF",
+      "region": "SSA"
+    },
+    {
+      "source": "BWA",
+      "target": "ZAF",
+      "region": "SSA"
+    },
+    {
+      "source": "SEN",
+      "target": "AGO",
+      "region": "SSA"
+    },
+    {
+      "source": "CMR",
+      "target": "NGA",
+      "region": "SSA"
+    },
+    {
+      "source": "DJI",
+      "target": "ZAF",
+      "region": "SSA"
+    },
+    {
+      "source": "BFA",
+      "target": "AGO",
+      "region": "SSA"
+    },
+    {
+      "source": "MRT",
+      "target": "ZAF",
+      "region": "SSA"
+    },
+    {
+      "source": "MLI",
+      "target": "AGO",
+      "region": "SSA"
+    },
+    {
+      "source": "SDN",
+      "target": "NGA",
+      "region": "SSA"
+    },
+    {
+      "source": "MDG",
+      "target": "NGA",
+      "region": "SSA"
+    },
+    {
+      "source": "ETH",
+      "target": "NGA",
+      "region": "SSA"
+    },
+    {
+      "source": "GIN",
+      "target": "ZAF",
+      "region": "SSA"
+    },
+    {
+      "source": "SWZ",
+      "target": "ZAF",
+      "region": "SSA"
+    },
+    {
+      "source": "RWA",
+      "target": "ZAF",
+      "region": "SSA"
+    },
+    {
+      "source": "MUS",
+      "target": "ZAF",
+      "region": "SSA"
+    },
+    {
+      "source": "TGO",
+      "target": "AGO",
+      "region": "SSA"
+    },
+    {
+      "source": "BEN",
+      "target": "NGA",
+      "region": "SSA"
+    },
+    {
+      "source": "MWI",
+      "target": "NGA",
+      "region": "SSA"
+    },
+    {
+      "source": "LSO",
+      "target": "ZAF",
+      "region": "SSA"
+    },
+    {
+      "source": "NER",
+      "target": "NGA",
+      "region": "SSA"
+    },
+    {
+      "source": "GNB",
+      "target": "NGA",
+      "region": "SSA"
+    },
+    {
+      "source": "BDI",
+      "target": "NGA",
+      "region": "SSA"
+    },
+    {
+      "source": "SLE",
+      "target": "AGO",
+      "region": "SSA"
+    },
+    {
+      "source": "LBR",
+      "target": "ZAF",
+      "region": "SSA"
+    },
+    {
+      "source": "CAF",
+      "target": "NGA",
+      "region": "SSA"
+    },
+    {
+      "source": "GMB",
+      "target": "ZAF",
+      "region": "SSA"
+    },
+    {
+      "source": "ERI",
+      "target": "NGA",
+      "region": "SSA"
+    },
+    {
+      "source": "GNQ",
+      "target": "NGA",
+      "region": "SSA"
+    },
+    {
+      "source": "SSD",
+      "target": "NGA",
+      "region": "SSA"
+    },
+    {
+      "source": "TCD",
+      "target": "NGA",
+      "region": "SSA"
+    },
+    {
+      "source": "DEU",
+      "target": "ITA",
+      "region": "ECA"
+    },
+    {
+      "source": "NLD",
+      "target": "DEU",
+      "region": "ECA"
+    },
+    {
+      "source": "FRA",
+      "target": "ITA",
+      "region": "ECA"
+    },
+    {
+      "source": "GBR",
+      "target": "ITA",
+      "region": "ECA"
+    },
+    {
+      "source": "RUS",
+      "target": "ITA",
+      "region": "ECA"
+    },
+    {
+      "source": "ESP",
+      "target": "ITA",
+      "region": "ECA"
+    },
+    {
+      "source": "CHE",
+      "target": "DEU",
+      "region": "ECA"
+    },
+    {
+      "source": "BEL",
+      "target": "NLD",
+      "region": "ECA"
+    },
+    {
+      "source": "POL",
+      "target": "DEU",
+      "region": "ECA"
+    },
+    {
+      "source": "TUR",
+      "target": "ITA",
+      "region": "ECA"
+    },
+    {
+      "source": "CZE",
+      "target": "NLD",
+      "region": "ECA"
+    },
+    {
+      "source": "AUT",
+      "target": "DEU",
+      "region": "ECA"
+    },
+    {
+      "source": "IRL",
+      "target": "DEU",
+      "region": "ECA"
+    },
+    {
+      "source": "SWE",
+      "target": "DEU",
+      "region": "ECA"
+    },
+    {
+      "source": "NOR",
+      "target": "ITA",
+      "region": "ECA"
+    },
+    {
+      "source": "HUN",
+      "target": "NLD",
+      "region": "ECA"
+    },
+    {
+      "source": "DNK",
+      "target": "DEU",
+      "region": "ECA"
+    },
+    {
+      "source": "SVK",
+      "target": "NLD",
+      "region": "ECA"
+    },
+    {
+      "source": "ROU",
+      "target": "DEU",
+      "region": "ECA"
+    },
+    {
+      "source": "PRT",
+      "target": "DEU",
+      "region": "ECA"
+    },
+    {
+      "source": "FIN",
+      "target": "ITA",
+      "region": "ECA"
+    },
+    {
+      "source": "KAZ",
+      "target": "ITA",
+      "region": "ECA"
+    },
+    {
+      "source": "SVN",
+      "target": "NLD",
+      "region": "ECA"
+    },
+    {
+      "source": "ISR",
+      "target": "ITA",
+      "region": "ECA"
+    },
+    {
+      "source": "GRC",
+      "target": "ITA",
+      "region": "ECA"
+    },
+    {
+      "source": "BGR",
+      "target": "DEU",
+      "region": "ECA"
+    },
+    {
+      "source": "LTU",
+      "target": "DEU",
+      "region": "ECA"
+    },
+    {
+      "source": "BLR",
+      "target": "NLD",
+      "region": "ECA"
+    },
+    {
+      "source": "UKR",
+      "target": "ITA",
+      "region": "ECA"
+    },
+    {
+      "source": "AZE",
+      "target": "DEU",
+      "region": "ECA"
+    },
+    {
+      "source": "HRV",
+      "target": "DEU",
+      "region": "ECA"
+    },
+    {
+      "source": "UZB",
+      "target": "ITA",
+      "region": "ECA"
+    },
+    {
+      "source": "LVA",
+      "target": "DEU",
+      "region": "ECA"
+    },
+    {
+      "source": "EST",
+      "target": "DEU",
+      "region": "ECA"
+    },
+    {
+      "source": "LUX",
+      "target": "ITA",
+      "region": "ECA"
+    },
+    {
+      "source": "BIH",
+      "target": "DEU",
+      "region": "ECA"
+    },
+    {
+      "source": "MKD",
+      "target": "NLD",
+      "region": "ECA"
+    },
+    {
+      "source": "ARM",
+      "target": "NLD",
+      "region": "ECA"
+    },
+    {
+      "source": "ISL",
+      "target": "ITA",
+      "region": "ECA"
+    },
+    {
+      "source": "GEO",
+      "target": "DEU",
+      "region": "ECA"
+    },
+    {
+      "source": "CYP",
+      "target": "ITA",
+      "region": "ECA"
+    },
+    {
+      "source": "ALB",
+      "target": "ITA",
+      "region": "ECA"
+    },
+    {
+      "source": "MDA",
+      "target": "DEU",
+      "region": "ECA"
+    },
+    {
+      "source": "KGZ",
+      "target": "DEU",
+      "region": "ECA"
+    },
+    {
+      "source": "TKM",
+      "target": "ITA",
+      "region": "ECA"
+    },
+    {
+      "source": "TJK",
+      "target": "DEU",
+      "region": "ECA"
+    },
+    {
+      "source": "MNE",
+      "target": "DEU",
+      "region": "ECA"
+    },
+    {
+      "source": "SRB",
+      "target": "DEU",
+      "region": "ECA"
+    },
+    {
+      "source": "ARE",
+      "target": "QAT",
+      "region": "MNA"
+    },
+    {
+      "source": "SAU",
+      "target": "QAT",
+      "region": "MNA"
+    },
+    {
+      "source": "IRQ",
+      "target": "QAT",
+      "region": "MNA"
+    },
+    {
+      "source": "KWT",
+      "target": "QAT",
+      "region": "MNA"
+    },
+    {
+      "source": "IRN",
+      "target": "SAU",
+      "region": "MNA"
+    },
+    {
+      "source": "OMN",
+      "target": "QAT",
+      "region": "MNA"
+    },
+    {
+      "source": "EGY",
+      "target": "SAU",
+      "region": "MNA"
+    },
+    {
+      "source": "MAR",
+      "target": "QAT",
+      "region": "MNA"
+    },
+    {
+      "source": "DZA",
+      "target": "SAU",
+      "region": "MNA"
+    },
+    {
+      "source": "LBY",
+      "target": "QAT",
+      "region": "MNA"
+    },
+    {
+      "source": "TUN",
+      "target": "QAT",
+      "region": "MNA"
+    },
+    {
+      "source": "JOR",
+      "target": "QAT",
+      "region": "MNA"
+    },
+    {
+      "source": "BHR",
+      "target": "QAT",
+      "region": "MNA"
+    },
+    {
+      "source": "SYR",
+      "target": "SAU",
+      "region": "MNA"
+    },
+    {
+      "source": "LBN",
+      "target": "QAT",
+      "region": "MNA"
+    },
+    {
+      "source": "YEM",
+      "target": "SAU",
+      "region": "MNA"
+    },
+    {
+      "source": "MEX",
+      "target": "CHL",
+      "region": "LAC"
+    },
+    {
+      "source": "BRA",
+      "target": "CHL",
+      "region": "LAC"
+    },
+    {
+      "source": "VEN",
+      "target": "BRA",
+      "region": "LAC"
+    },
+    {
+      "source": "ARG",
+      "target": "BRA",
+      "region": "LAC"
+    },
+    {
+      "source": "PER",
+      "target": "CHL",
+      "region": "LAC"
+    },
+    {
+      "source": "COL",
+      "target": "BRA",
+      "region": "LAC"
+    },
+    {
+      "source": "ECU",
+      "target": "CHL",
+      "region": "LAC"
+    },
+    {
+      "source": "CRI",
+      "target": "CHL",
+      "region": "LAC"
+    },
+    {
+      "source": "GTM",
+      "target": "BRA",
+      "region": "LAC"
+    },
+    {
+      "source": "DOM",
+      "target": "BRA",
+      "region": "LAC"
+    },
+    {
+      "source": "PRY",
+      "target": "MEX",
+      "region": "LAC"
+    },
+    {
+      "source": "BOL",
+      "target": "BRA",
+      "region": "LAC"
+    },
+    {
+      "source": "GUY",
+      "target": "MEX",
+      "region": "LAC"
+    },
+    {
+      "source": "URY",
+      "target": "BRA",
+      "region": "LAC"
+    },
+    {
+      "source": "TTO",
+      "target": "CHL",
+      "region": "LAC"
+    },
+    {
+      "source": "NIC",
+      "target": "MEX",
+      "region": "LAC"
+    },
+    {
+      "source": "HND",
+      "target": "MEX",
+      "region": "LAC"
+    },
+    {
+      "source": "SLV",
+      "target": "MEX",
+      "region": "LAC"
+    },
+    {
+      "source": "PAN",
+      "target": "CHL",
+      "region": "LAC"
+    },
+    {
+      "source": "JAM",
+      "target": "BRA",
+      "region": "LAC"
+    },
+    {
+      "source": "BHS",
+      "target": "BRA",
+      "region": "LAC"
+    },
+    {
+      "source": "BLZ",
+      "target": "CHL",
+      "region": "LAC"
+    },
+    {
+      "source": "HTI",
+      "target": "BRA",
+      "region": "LAC"
+    },
+    {
+      "source": "CHN",
+      "target": "JPN",
+      "region": "EAP"
+    },
+    {
+      "source": "KOR",
+      "target": "JPN",
+      "region": "EAP"
+    },
+    {
+      "source": "SGP",
+      "target": "KOR",
+      "region": "EAP"
+    },
+    {
+      "source": "AUS",
+      "target": "JPN",
+      "region": "EAP"
+    },
+    {
+      "source": "VNM",
+      "target": "KOR",
+      "region": "EAP"
+    },
+    {
+      "source": "MYS",
+      "target": "KOR",
+      "region": "EAP"
+    },
+    {
+      "source": "THA",
+      "target": "KOR",
+      "region": "EAP"
+    },
+    {
+      "source": "IDN",
+      "target": "JPN",
+      "region": "EAP"
+    },
+    {
+      "source": "PHL",
+      "target": "JPN",
+      "region": "EAP"
+    },
+    {
+      "source": "NZL",
+      "target": "CHN",
+      "region": "EAP"
+    },
+    {
+      "source": "KHM",
+      "target": "KOR",
+      "region": "EAP"
+    },
+    {
+      "source": "MMR",
+      "target": "JPN",
+      "region": "EAP"
+    },
+    {
+      "source": "MNG",
+      "target": "KOR",
+      "region": "EAP"
+    },
+    {
+      "source": "BRN",
+      "target": "KOR",
+      "region": "EAP"
+    },
+    {
+      "source": "PNG",
+      "target": "KOR",
+      "region": "EAP"
+    },
+    {
+      "source": "LAO",
+      "target": "KOR",
+      "region": "EAP"
+    },
+    {
+      "source": "FJI",
+      "target": "KOR",
+      "region": "EAP"
+    },
+    {
+      "source": "USA",
+      "target": "CAN",
+      "region": "NAC"
+    },
+    {
+      "source": "IND",
+      "target": "ZAF",
+      "region": "inter"
+    },
+    {
+      "source": "IND",
+      "target": "DEU",
+      "region": "inter"
+    },
+    {
+      "source": "IND",
+      "target": "ARE",
+      "region": "inter"
+    },
+    {
+      "source": "IND",
+      "target": "MEX",
+      "region": "inter"
+    },
+    {
+      "source": "IND",
+      "target": "CHN",
+      "region": "inter"
+    },
+    {
+      "source": "IND",
+      "target": "USA",
+      "region": "inter"
+    },
+    {
+      "source": "ZAF",
+      "target": "DEU",
+      "region": "inter"
+    },
+    {
+      "source": "ZAF",
+      "target": "ARE",
+      "region": "inter"
+    },
+    {
+      "source": "ZAF",
+      "target": "MEX",
+      "region": "inter"
+    },
+    {
+      "source": "ZAF",
+      "target": "CHN",
+      "region": "inter"
+    },
+    {
+      "source": "ZAF",
+      "target": "USA",
+      "region": "inter"
+    },
+    {
+      "source": "DEU",
+      "target": "ARE",
+      "region": "inter"
+    },
+    {
+      "source": "DEU",
+      "target": "MEX",
+      "region": "inter"
+    },
+    {
+      "source": "DEU",
+      "target": "CHN",
+      "region": "inter"
+    },
+    {
+      "source": "DEU",
+      "target": "USA",
+      "region": "inter"
+    },
+    {
+      "source": "ARE",
+      "target": "MEX",
+      "region": "inter"
+    },
+    {
+      "source": "ARE",
+      "target": "CHN",
+      "region": "inter"
+    },
+    {
+      "source": "ARE",
+      "target": "USA",
+      "region": "inter"
+    },
+    {
+      "source": "MEX",
+      "target": "CHN",
+      "region": "inter"
+    },
+    {
+      "source": "MEX",
+      "target": "USA",
+      "region": "inter"
+    },
+    {
+      "source": "CHN",
+      "target": "USA",
+      "region": "inter"
+    }
+  ],
+  "regions": {
+    "EAP": "East Asia & Pacific",
+    "ECA": "Europe & Central Asia",
+    "LAC": "Latin America & Caribbean",
+    "MNA": "Middle East & North Africa",
+    "SAS": "South Asia",
+    "SSA": "Sub-Saharan Africa",
+    "NAC": "North America"
+  }
+}

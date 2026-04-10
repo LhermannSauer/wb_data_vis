@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pilar Institucional — América Latina</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 780px; margin: 40px auto; padding: 0 24px; color: #1a1a1a; }
+    h1 { font-size: 18px; font-weight: 500; margin-bottom: 4px; }
+    p.sub { font-size: 13px; color: #666; margin-top: 0; margin-bottom: 24px; }
+    select { font-size: 13px; padding: 5px 10px; border: 1px solid #ccc; border-radius: 6px; cursor: pointer; }
+    .legend { display: flex; gap: 16px; margin-top: 10px; font-size: 12px; color: #555; flex-wrap: wrap; }
+    .legend span { display: flex; align-items: center; gap: 5px; }
+    .swatch { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+    #anio { font-size: 12px; color: #888; margin-left: auto; }
+    #tooltip { position: fixed; pointer-events: none; opacity: 0; background: rgba(255,255,255,0.97);
+                border: 1px solid #ddd; border-radius: 8px; padding: 8px 12px;
+                font-size: 12px; line-height: 1.75; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+  </style>
+</head>
+<body>
+  <h1>Pilar institucional — América Latina (2013–2023)</h1>
+  <p class="sub">Desviación de cada país respecto a la media regional. Fuentes: WGI, WJP, Freedom House, RSF, V-Dem.</p>
+
+  <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px;">
+    <label for="sel" style="font-size:13px;color:#555;">Índice</label>
+    <select id="sel"></select>
+    <span id="anio"></span>
+  </div>
+
+  <div id="chart" style="position:relative;width:100%;"></div>
+
+  <div class="legend">
+    <span><span class="swatch" style="background:#1D9E75;"></span>sobre la media</span>
+    <span><span class="swatch" style="background:#D85A30;"></span>bajo la media</span>
+    <span><span class="swatch" style="background:#378ADD;"></span>Argentina</span>
+  </div>
+
+  <div id="tooltip"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+  <script>
+    const DATA = {
+  "Control Corrupción": {
+    "anio": 2023,
+    "media": 41.6667,
+    "datos": [
+      {
+        "REF_AREA": "ARG",
+        "pais": "Argentina",
+        "valor": 41.9811,
+        "desviacion": 0.3145
+      },
+      {
+        "REF_AREA": "BOL",
+        "pais": "Bolivia",
+        "valor": 21.6981,
+        "desviacion": -19.9686
+      },
+      {
+        "REF_AREA": "BRA",
+        "pais": "Brasil",
+        "valor": 34.434,
+        "desviacion": -7.2327
+      },
+      {
+        "REF_AREA": "CHL",
+        "pais": "Chile",
+        "valor": 80.6604,
+        "desviacion": 38.9937
+      },
+      {
+        "REF_AREA": "COL",
+        "pais": "Colombia",
+        "valor": 44.8113,
+        "desviacion": 3.1447
+      },
+      {
+        "REF_AREA": "MEX",
+        "pais": "México",
+        "valor": 17.4528,
+        "desviacion": -24.2138
+      },
+      {
+        "REF_AREA": "PER",
+        "pais": "Perú",
+        "valor": 25.4717,
+        "desviacion": -16.195
+      },
+      {
+        "REF_AREA": "PRY",
+        "pais": "Paraguay",
+        "valor": 16.0377,
+        "desviacion": -25.6289
+      },
+      {
+        "REF_AREA": "URY",
+        "pais": "Uruguay",
+        "valor": 92.4528,
+        "desviacion": 50.7862
+      }
+    ]
+  },
+  "Estado de Derecho": {
+    "anio": 2023,
+    "media": 0.5152,
+    "datos": [
+      {
+        "REF_AREA": "ARG",
+        "pais": "Argentina",
+        "valor": 0.5459,
+        "desviacion": 0.0307
+      },
+      {
+        "REF_AREA": "BOL",
+        "pais": "Bolivia",
+        "valor": 0.3736,
+        "desviacion": -0.1416
+      },
+      {
+        "REF_AREA": "BRA",
+        "pais": "Brasil",
+        "valor": 0.4899,
+        "desviacion": -0.0252
+      },
+      {
+        "REF_AREA": "CHL",
+        "pais": "Chile",
+        "valor": 0.6621,
+        "desviacion": 0.147
+      },
+      {
+        "REF_AREA": "COL",
+        "pais": "Colombia",
+        "valor": 0.4817,
+        "desviacion": -0.0334
+      },
+      {
+        "REF_AREA": "MEX",
+        "pais": "México",
+        "valor": 0.4174,
+        "desviacion": -0.0978
+      },
+      {
+        "REF_AREA": "PER",
+        "pais": "Perú",
+        "valor": 0.4863,
+        "desviacion": -0.0289
+      },
+      {
+        "REF_AREA": "PRY",
+        "pais": "Paraguay",
+        "valor": 0.4629,
+        "desviacion": -0.0523
+      },
+      {
+        "REF_AREA": "URY",
+        "pais": "Uruguay",
+        "valor": 0.7165,
+        "desviacion": 0.2014
+      }
+    ]
+  },
+  "Score Freedom Total": {
+    "anio": 2023,
+    "media": 75.3333,
+    "datos": [
+      {
+        "REF_AREA": "ARG",
+        "pais": "Argentina",
+        "valor": 85.0,
+        "desviacion": 9.6667
+      },
+      {
+        "REF_AREA": "BOL",
+        "pais": "Bolivia",
+        "valor": 66.0,
+        "desviacion": -9.3333
+      },
+      {
+        "REF_AREA": "BRA",
+        "pais": "Brasil",
+        "valor": 72.0,
+        "desviacion": -3.3333
+      },
+      {
+        "REF_AREA": "CHL",
+        "pais": "Chile",
+        "valor": 94.0,
+        "desviacion": 18.6667
+      },
+      {
+        "REF_AREA": "COL",
+        "pais": "Colombia",
+        "valor": 70.0,
+        "desviacion": -5.3333
+      },
+      {
+        "REF_AREA": "MEX",
+        "pais": "México",
+        "valor": 60.0,
+        "desviacion": -15.3333
+      },
+      {
+        "REF_AREA": "PER",
+        "pais": "Perú",
+        "valor": 70.0,
+        "desviacion": -5.3333
+      },
+      {
+        "REF_AREA": "PRY",
+        "pais": "Paraguay",
+        "valor": 65.0,
+        "desviacion": -10.3333
+      },
+      {
+        "REF_AREA": "URY",
+        "pais": "Uruguay",
+        "valor": 96.0,
+        "desviacion": 20.6667
+      }
+    ]
+  },
+  "Libertad de Prensa": {
+    "anio": 2023,
+    "media": 57.2722,
+    "datos": [
+      {
+        "REF_AREA": "ARG",
+        "pais": "Argentina",
+        "valor": 73.36,
+        "desviacion": 16.0878
+      },
+      {
+        "REF_AREA": "BOL",
+        "pais": "Bolivia",
+        "valor": 51.09,
+        "desviacion": -6.1822
+      },
+      {
+        "REF_AREA": "BRA",
+        "pais": "Brasil",
+        "valor": 58.67,
+        "desviacion": 1.3978
+      },
+      {
+        "REF_AREA": "CHL",
+        "pais": "Chile",
+        "valor": 60.09,
+        "desviacion": 2.8178
+      },
+      {
+        "REF_AREA": "COL",
+        "pais": "Colombia",
+        "valor": 45.23,
+        "desviacion": -12.0422
+      },
+      {
+        "REF_AREA": "MEX",
+        "pais": "México",
+        "valor": 47.98,
+        "desviacion": -9.2922
+      },
+      {
+        "REF_AREA": "PER",
+        "pais": "Perú",
+        "valor": 52.74,
+        "desviacion": -4.5322
+      },
+      {
+        "REF_AREA": "PRY",
+        "pais": "Paraguay",
+        "valor": 55.96,
+        "desviacion": -1.3122
+      },
+      {
+        "REF_AREA": "URY",
+        "pais": "Uruguay",
+        "valor": 70.33,
+        "desviacion": 13.0578
+      }
+    ]
+  },
+  "Soc. Civil (Core)": {
+    "anio": 2023,
+    "media": 0.823,
+    "datos": [
+      {
+        "REF_AREA": "ARG",
+        "pais": "Argentina",
+        "valor": 0.888,
+        "desviacion": 0.065
+      },
+      {
+        "REF_AREA": "BOL",
+        "pais": "Bolivia",
+        "valor": 0.679,
+        "desviacion": -0.144
+      },
+      {
+        "REF_AREA": "BRA",
+        "pais": "Brasil",
+        "valor": 0.935,
+        "desviacion": 0.112
+      },
+      {
+        "REF_AREA": "CHL",
+        "pais": "Chile",
+        "valor": 0.85,
+        "desviacion": 0.027
+      },
+      {
+        "REF_AREA": "COL",
+        "pais": "Colombia",
+        "valor": 0.868,
+        "desviacion": 0.045
+      },
+      {
+        "REF_AREA": "MEX",
+        "pais": "México",
+        "valor": 0.715,
+        "desviacion": -0.108
+      },
+      {
+        "REF_AREA": "PER",
+        "pais": "Perú",
+        "valor": 0.819,
+        "desviacion": -0.004
+      },
+      {
+        "REF_AREA": "PRY",
+        "pais": "Paraguay",
+        "valor": 0.791,
+        "desviacion": -0.032
+      },
+      {
+        "REF_AREA": "URY",
+        "pais": "Uruguay",
+        "valor": 0.862,
+        "desviacion": 0.039
+      }
+    ]
+  }
+};
+
+    const sel = document.getElementById('sel');
+    Object.keys(DATA).forEach(k => {
+      const o = document.createElement('option');
+      o.value = k; o.textContent = k; sel.appendChild(o);
+    });
+
+    const C_POS='#1D9E75', C_NEG='#D85A30', C_ARG='#378ADD';
+    const ml=110, mr=80, mt=22, mb=36, barH=36, bw=560;
+    const nRows = 9;
+    const totalH = nRows*barH + mt + mb;
+
+    const svg = d3.select('#chart').append('svg')
+      .attr('viewBox',`0 0 ${bw+ml+mr} ${totalH}`)
+      .attr('width','100%').style('overflow','visible');
+    const g = svg.append('g').attr('transform',`translate(${ml},${mt})`);
+
+    const xSc = d3.scaleLinear().range([0,bw]);
+    const ySc = d3.scaleBand().range([0,nRows*barH]).padding(0.28);
+
+    const xAxisG = g.append('g');
+    const zLine  = g.append('line').attr('stroke','rgba(0,0,0,0.25)').attr('stroke-width',1);
+    const avgTxt = g.append('text').attr('font-size',10).attr('fill','#888').attr('text-anchor','middle').attr('dy',-6);
+    const barsG  = g.append('g');
+    const lblG   = g.append('g');
+    const valG   = g.append('g');
+    const tip    = document.getElementById('tooltip');
+
+    function fmt(v){ return Math.abs(v)>=10?v.toFixed(1):Math.abs(v)>=1?v.toFixed(2):v.toFixed(3); }
+
+    function update(key){
+      const d = DATA[key];
+      const sorted = [...d.datos].sort((a,b)=>b.desviacion-a.desviacion);
+      const mx = Math.max(...sorted.map(r=>Math.abs(r.desviacion)))*1.22;
+      xSc.domain([-mx,mx]); ySc.domain(sorted.map(r=>r.REF_AREA));
+      document.getElementById('anio').textContent = 'año: ' + d.anio;
+      const z = xSc(0);
+
+      zLine.attr('x1',z).attr('x2',z).attr('y1',0).attr('y2',nRows*barH);
+      avgTxt.attr('x',z).text('media regional');
+
+      xAxisG.attr('transform',`translate(0,${nRows*barH})`)
+        .call(d3.axisBottom(xSc).ticks(6).tickFormat(v=>(v>0?'+':'')+fmt(v)))
+        .call(a=>a.select('.domain').attr('stroke','#ddd'))
+        .call(a=>a.selectAll('.tick line').attr('stroke','#ddd'))
+        .call(a=>a.selectAll('text').attr('fill','#888').attr('font-size',11));
+
+      const bars = barsG.selectAll('rect').data(sorted,r=>r.REF_AREA);
+      bars.enter().append('rect').attr('rx',3)
+        .attr('y',r=>ySc(r.REF_AREA)).attr('height',ySc.bandwidth())
+        .attr('x',z).attr('width',0)
+        .on('mousemove',(ev,r)=>{
+          tip.style.opacity=1;
+          tip.style.left=(ev.clientX+14)+'px'; tip.style.top=(ev.clientY-8)+'px';
+          tip.innerHTML=`<strong>${r.pais}</strong><br>Valor: ${fmt(r.valor)}<br>Desviación: ${r.desviacion>=0?'+':''}${fmt(r.desviacion)}<br>Media: ${fmt(d.media)}`;
+        })
+        .on('mouseleave',()=>tip.style.opacity=0)
+        .merge(bars).transition().duration(550).ease(d3.easeCubicOut)
+        .attr('fill',r=>r.REF_AREA==='ARG'?C_ARG:r.desviacion>=0?C_POS:C_NEG)
+        .attr('y',r=>ySc(r.REF_AREA)).attr('height',ySc.bandwidth())
+        .attr('x',r=>r.desviacion<0?xSc(r.desviacion):z)
+        .attr('width',r=>Math.abs(xSc(r.desviacion)-z));
+      bars.exit().remove();
+
+      const lbls = lblG.selectAll('text').data(sorted,r=>r.REF_AREA);
+      lbls.enter().append('text').attr('dominant-baseline','middle').attr('text-anchor','end')
+        .merge(lbls).transition().duration(550)
+        .attr('x',-8).attr('y',r=>ySc(r.REF_AREA)+ySc.bandwidth()/2)
+        .attr('font-size',13).attr('font-weight',r=>r.REF_AREA==='ARG'?600:400)
+        .attr('fill',r=>r.REF_AREA==='ARG'?C_ARG:'#222')
+        .text(r=>r.pais);
+      lbls.exit().remove();
+
+      const vals = valG.selectAll('text').data(sorted,r=>r.REF_AREA);
+      vals.enter().append('text').attr('dominant-baseline','middle')
+        .merge(vals).transition().duration(550)
+        .attr('y',r=>ySc(r.REF_AREA)+ySc.bandwidth()/2)
+        .attr('x',r=>r.desviacion>=0?xSc(r.desviacion)+5:xSc(r.desviacion)-5)
+        .attr('text-anchor',r=>r.desviacion>=0?'start':'end')
+        .attr('font-size',11).attr('fill','#888')
+        .text(r=>(r.desviacion>0?'+':'')+fmt(r.desviacion));
+      vals.exit().remove();
+    }
+
+    update(Object.keys(DATA)[0]);
+    sel.addEventListener('change',e=>update(e.target.value));
+  </script>
+</body>
+</html>

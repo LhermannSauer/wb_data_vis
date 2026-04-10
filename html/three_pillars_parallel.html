@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Tres Pilares del Desarrollo — Coordenadas Paralelas</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f7f5f0;
+    --surface: #ffffff;
+    --ink: #1a1a18;
+    --ink-2: #5a5a54;
+    --ink-3: #9a9a90;
+    --border: rgba(26,26,24,0.10);
+    --border-2: rgba(26,26,24,0.18);
+    --accent: #1a1a18;
+    --hdi-lo: #d4e8f5;
+    --hdi-hi: #0c3a5e;
+    --pillar-1: #c9a96e;
+    --pillar-2: #6e9e8a;
+    --pillar-3: #7a8bbf;
+    --font-display: 'DM Mono', monospace;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  body {
+    background: var(--bg);
+    font-family: var(--font-body);
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 0;
+  }
+
+  .back-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-display); font-size: 11px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--ink-3); text-decoration: none;
+    padding: 10px 3rem 0; background: var(--surface);
+    transition: color 0.15s;
+  }
+  .back-link:hover { color: var(--ink); }
+
+  /* ── HEADER ── */
+  header {
+    padding: 2.5rem 3rem 1.5rem;
+    border-bottom: 0.5px solid var(--border-2);
+    background: var(--surface);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .header-left h1 {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 6px;
+  }
+  .header-left p {
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.3;
+    color: var(--ink);
+    max-width: 480px;
+  }
+  .header-left p strong { font-weight: 500; }
+
+  .header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  /* Pillar legend */
+  .pillar-legend {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .pillar-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    font-family: var(--font-display);
+    color: var(--ink-2);
+    letter-spacing: 0.03em;
+  }
+  .pillar-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* HDI gradient legend */
+  .hdi-legend {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-family: var(--font-display);
+    color: var(--ink-3);
+  }
+  .hdi-bar {
+    width: 100px; height: 8px;
+    border-radius: 4px;
+    background: linear-gradient(to right, var(--hdi-lo), var(--hdi-hi));
+  }
+
+  /* ── CONTROLS ── */
+  .controls {
+    background: var(--surface);
+    border-bottom: 0.5px solid var(--border);
+    padding: 0.9rem 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .controls label {
+    font-size: 12px;
+    font-family: var(--font-display);
+    color: var(--ink-3);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .search-wrap {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    position: relative;
+  }
+  .search-wrap input {
+    font-family: var(--font-body);
+    font-size: 13px;
+    padding: 6px 12px;
+    border: 0.5px solid var(--border-2);
+    border-radius: 4px;
+    background: var(--bg);
+    color: var(--ink);
+    outline: none;
+    width: 200px;
+    transition: border-color 0.15s;
+  }
+  .search-wrap input:focus { border-color: var(--hdi-hi); }
+
+  #suggestions {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    width: 240px;
+    background: var(--surface);
+    border: 0.5px solid var(--border-2);
+    border-radius: 4px;
+    z-index: 100;
+    display: none;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    max-height: 200px;
+    overflow-y: auto;
+  }
+  #suggestions div {
+    padding: 7px 12px;
+    font-size: 13px;
+    cursor: pointer;
+    color: var(--ink);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #suggestions div:hover { background: var(--bg); }
+  #suggestions div .iso { font-family: var(--font-display); font-size: 11px; color: var(--ink-3); }
+
+  .btn {
+    font-family: var(--font-display);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border: 0.5px solid var(--border-2);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--ink-2);
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s;
+  }
+  .btn:hover { background: var(--ink); color: var(--bg); }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    flex: 1;
+  }
+  .tag {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-family: var(--font-display);
+    border: 0.5px solid;
+    letter-spacing: 0.02em;
+  }
+  .tag .x {
+    cursor: pointer;
+    opacity: 0.5;
+    font-size: 14px;
+    line-height: 1;
+    transition: opacity 0.1s;
+  }
+  .tag .x:hover { opacity: 1; }
+
+  /* ── CHART ── */
+  .chart-area {
+    padding: 2rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #chart svg {
+    width: 100%;
+    display: block;
+  }
+
+  /* Axis label groups */
+  .axis-group text.axis-title {
+    font-family: var(--font-display);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    fill: var(--ink-2);
+  }
+  .axis-group text.axis-unit {
+    font-family: var(--font-body);
+    font-size: 10px;
+    fill: var(--ink-3);
+  }
+  .axis-group text.tick-label {
+    font-family: var(--font-display);
+    font-size: 10px;
+    fill: var(--ink-3);
+  }
+
+  .pc-line {
+    fill: none;
+    stroke-width: 1.5;
+    transition: stroke-width 0.15s, opacity 0.15s;
+    cursor: pointer;
+  }
+  .pc-line:hover { stroke-width: 3; }
+  .pc-line.dimmed { opacity: 0.08; }
+  .pc-line.highlighted { stroke-width: 3; opacity: 1 !important; }
+
+  /* Pillar bracket backgrounds */
+  .pillar-band { opacity: 0.15; }
+
+  /* ── TOOLTIP ── */
+  #tooltip {
+    position: fixed;
+    pointer-events: none;
+    background: var(--surface);
+    border: 0.5px solid var(--border-2);
+    border-radius: 4px;
+    padding: 12px 16px;
+    font-size: 13px;
+    opacity: 0;
+    transition: opacity 0.12s;
+    z-index: 500;
+    min-width: 200px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+  #tooltip .tt-header {
+    font-weight: 500;
+    font-size: 14px;
+    margin-bottom: 2px;
+    color: var(--ink);
+  }
+  #tooltip .tt-iso {
+    font-family: var(--font-display);
+    font-size: 11px;
+    color: var(--ink-3);
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  #tooltip .tt-hdi-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 0.5px solid var(--border);
+  }
+  #tooltip .tt-hdi-label {
+    font-family: var(--font-display);
+    font-size: 11px;
+    color: var(--ink-3);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+  #tooltip .tt-hdi-val {
+    font-size: 18px;
+    font-weight: 500;
+    font-family: var(--font-display);
+  }
+  #tooltip .tt-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin: 4px 0;
+  }
+  #tooltip .tt-dim { font-size: 12px; color: var(--ink-2); }
+  #tooltip .tt-val { font-family: var(--font-display); font-size: 12px; font-weight: 400; }
+  #tooltip .tt-pillar {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+
+  /* ── FOOTER NOTE ── */
+  footer {
+    padding: 1.5rem 3rem 2rem;
+    border-top: 0.5px solid var(--border);
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  footer p {
+    font-size: 11px;
+    color: var(--ink-3);
+    font-family: var(--font-display);
+    line-height: 1.7;
+    max-width: 640px;
+  }
+  footer p strong { font-weight: 500; color: var(--ink-2); }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">← Volver al indice</a>
+<header>
+  <div class="header-left">
+    <h1>InfoVis ECD 2025 — World Bank Data360</h1>
+    <p>Como se alinean la <strong>apertura economica</strong>, la <strong>calidad institucional</strong> y la <strong>conectividad digital</strong> con el desarrollo humano?</p>
+  </div>
+  <div class="header-right">
+    <div class="pillar-legend">
+      <div class="pillar-item"><div class="pillar-dot" style="background:var(--pillar-1)"></div>Apertura economica</div>
+      <div class="pillar-item"><div class="pillar-dot" style="background:var(--pillar-2)"></div>Instituciones</div>
+      <div class="pillar-item"><div class="pillar-dot" style="background:var(--pillar-3)"></div>Conectividad</div>
+    </div>
+    <div class="hdi-legend">
+      <span>IDH bajo</span>
+      <div class="hdi-bar"></div>
+      <span>IDH alto</span>
+    </div>
+  </div>
+</header>
+
+<div class="controls">
+  <label>Agregar pais</label>
+  <div class="search-wrap" id="search-wrap">
+    <input type="text" id="country-input" placeholder="Buscar…" autocomplete="off" />
+    <div id="suggestions"></div>
+    <button class="btn" onclick="addFromInput()">Agregar</button>
+  </div>
+  <div class="tags" id="tags"></div>
+  <button class="btn" onclick="resetDefault()" style="margin-left:auto;">Reiniciar</button>
+</div>
+
+<div class="chart-area">
+  <div id="chart"></div>
+</div>
+
+<div id="tooltip"></div>
+
+<footer>
+  <p>
+    <strong>Fuentes:</strong> Freedom House (libertades civiles, 0–100) · WJP Indice de Estado de Derecho (0–1) · World Bank WGI Control de Corrupcion (rango percentil) ·
+    World Bank WDI Comercio de Mercancias % PIB · ITU / World Bank Penetracion de internet (% poblacion) · ONU EGDI Indice de E-Gobierno (0–1) ·
+    PNUD Indice de Desarrollo Humano (0–1). Valores aproximados c. 2020–2022.
+  </p>
+  <p>Cada linea es un pais. Las lineas estan coloreadas por IDH usando una rampa azul — mas oscuro significa mayor desarrollo. Pasar el mouse para inspeccionar.</p>
+</footer>
+
+<script>
+/* ── DATA ── */
+const AXES_DEF = [
+  { key: 'trade',      label: 'Comercio',          unit: '% PIB',     pillar: 1, fixedMin: 0, fmt: v => v.toFixed(0) + '%' },
+  { key: 'fdi',        label: 'IED Entrante',      unit: '% PIB',     pillar: 1, fixedMin: 0, fmt: v => v.toFixed(1) + '%' },
+  { key: 'freedom',    label: 'Lib. Civiles',      unit: '0–100',     pillar: 2, fixedMin: 0, fixedMax: 100, fmt: v => v.toFixed(0) },
+  { key: 'rule_law',   label: 'Estado de Der.',     unit: '0–1',       pillar: 2, fixedMin: 0, fixedMax: 1, fmt: v => v.toFixed(2) },
+  { key: 'corruption', label: 'Ctrl. Corrupcion',   unit: 'rango pctil', pillar: 2, fixedMin: 0, fixedMax: 100, fmt: v => v.toFixed(0) },
+  { key: 'internet',   label: 'Internet',           unit: '% pob.',    pillar: 3, fixedMin: 0, fixedMax: 100, fmt: v => v.toFixed(0) + '%' },
+  { key: 'egov',       label: 'Ind. E-Gobierno',    unit: '0–1',       pillar: 3, fixedMin: 0, fixedMax: 1, fmt: v => v.toFixed(2) },
+];
+
+const PILLAR_COLORS = { 1: '#c9a96e', 2: '#6e9e8a', 3: '#7a8b9f' };
+const PILLAR_NAMES  = { 1: 'Apertura economica', 2: 'Instituciones', 3: 'Conectividad' };
+
+const COUNTRIES = {
+  ARG: { name:'Argentina',     region:'LATAM', hdi:0.849, trade:31,  fdi:1.4, freedom:83, rule_law:0.46, corruption:37, internet:88,  egov:0.73 },
+  BRA: { name:'Brazil',        region:'LATAM', hdi:0.754, trade:37,  fdi:3.2, freedom:74, rule_law:0.51, corruption:38, internet:81,  egov:0.76 },
+  CHL: { name:'Chile',         region:'LATAM', hdi:0.860, trade:56,  fdi:6.0, freedom:92, rule_law:0.66, corruption:67, internet:90,  egov:0.81 },
+  COL: { name:'Colombia',      region:'LATAM', hdi:0.752, trade:38,  fdi:4.5, freedom:62, rule_law:0.47, corruption:41, internet:73,  egov:0.69 },
+  MEX: { name:'Mexico',        region:'LATAM', hdi:0.774, trade:78,  fdi:2.8, freedom:60, rule_law:0.41, corruption:28, internet:76,  egov:0.71 },
+  URY: { name:'Uruguay',       region:'LATAM', hdi:0.830, trade:43,  fdi:3.1, freedom:97, rule_law:0.70, corruption:73, internet:88,  egov:0.77 },
+  PER: { name:'Peru',          region:'LATAM', hdi:0.762, trade:47,  fdi:2.1, freedom:71, rule_law:0.45, corruption:36, internet:71,  egov:0.66 },
+  USA: { name:'United States', region:'NAM',   hdi:0.926, trade:27,  fdi:1.5, freedom:83, rule_law:0.72, corruption:68, internet:92,  egov:0.90 },
+  CAN: { name:'Canada',        region:'NAM',   hdi:0.936, trade:65,  fdi:2.9, freedom:98, rule_law:0.83, corruption:77, internet:93,  egov:0.88 },
+  DEU: { name:'Germany',       region:'EUR',   hdi:0.942, trade:87,  fdi:1.2, freedom:94, rule_law:0.84, corruption:85, internet:93,  egov:0.88 },
+  NOR: { name:'Norway',        region:'EUR',   hdi:0.966, trade:69,  fdi:2.0, freedom:100,rule_law:0.90, corruption:95, internet:99,  egov:0.95 },
+  POL: { name:'Poland',        region:'EUR',   hdi:0.876, trade:107, fdi:2.4, freedom:82, rule_law:0.63, corruption:60, internet:91,  egov:0.85 },
+  SGP: { name:'Singapore',     region:'APAC',  hdi:0.939, trade:318, fdi:12.5,freedom:38, rule_law:0.86, corruption:97, internet:92,  egov:0.94 },
+  CHN: { name:'China',         region:'APAC',  hdi:0.788, trade:37,  fdi:2.3, freedom:9,  rule_law:0.49, corruption:45, internet:73,  egov:0.79 },
+  JPN: { name:'Japan',         region:'APAC',  hdi:0.920, trade:37,  fdi:0.5, freedom:96, rule_law:0.82, corruption:73, internet:92,  egov:0.92 },
+  KOR: { name:'South Korea',   region:'APAC',  hdi:0.929, trade:79,  fdi:0.8, freedom:83, rule_law:0.79, corruption:63, internet:97,  egov:0.93 },
+  IND: { name:'India',         region:'APAC',  hdi:0.644, trade:46,  fdi:1.8, freedom:66, rule_law:0.53, corruption:40, internet:46,  egov:0.58 },
+  NGA: { name:'Nigeria',       region:'AFR',   hdi:0.535, trade:30,  fdi:0.5, freedom:43, rule_law:0.36, corruption:17, internet:36,  egov:0.44 },
+  ZAF: { name:'South Africa',  region:'AFR',   hdi:0.713, trade:55,  fdi:1.0, freedom:79, rule_law:0.54, corruption:44, internet:68,  egov:0.67 },
+  KEN: { name:'Kenya',         region:'AFR',   hdi:0.601, trade:33,  fdi:1.2, freedom:55, rule_law:0.44, corruption:28, internet:29,  egov:0.52 },
+  TUR: { name:'Türkiye',       region:'MENA',  hdi:0.838, trade:64,  fdi:1.0, freedom:32, rule_law:0.41, corruption:38, internet:85,  egov:0.74 },
+  SAU: { name:'Saudi Arabia',  region:'MENA',  hdi:0.875, trade:65,  fdi:1.4, freedom:7,  rule_law:0.52, corruption:55, internet:96,  egov:0.82 },
+  EGY: { name:'Egypt',         region:'MENA',  hdi:0.731, trade:41,  fdi:2.0, freedom:12, rule_law:0.38, corruption:30, internet:72,  egov:0.60 },
+};
+
+const allVals = Object.values(COUNTRIES);
+const AXES = AXES_DEF.map(ax => {
+  const vals = allVals.map(d => d[ax.key]).filter(v => v != null);
+  const lo = ax.fixedMin != null ? ax.fixedMin : Math.min(0, d3.min(vals));
+  const hi = ax.fixedMax != null ? ax.fixedMax : Math.ceil(d3.max(vals) * 1.1);
+  return { ...ax, min: lo, max: hi };
+});
+
+const DEFAULT_ACTIVE = ['ARG','CHL','NOR','SGP','CHN','NGA','URY'];
+let active = [...DEFAULT_ACTIVE];
+
+/* ── COLOR SCALE (single hue blue) ── */
+const allHDI = Object.values(COUNTRIES).map(d => d.hdi);
+const hdiScale = d3.scaleSequential()
+  .domain([d3.min(allHDI), d3.max(allHDI)])
+  .interpolator(d3.interpolate('#cce0f0', '#0c3a5e'));
+
+/* ── CHART ── */
+function draw() {
+  const container = document.getElementById('chart');
+  container.innerHTML = '';
+
+  const totalW = container.clientWidth || 860;
+  const margin = { top: 80, right: 60, bottom: 30, left: 60 };
+  const W = totalW - margin.left - margin.right;
+  const H = 420;
+
+  const svg = d3.select('#chart').append('svg')
+    .attr('width', totalW)
+    .attr('height', H + margin.top + margin.bottom);
+
+  const g = svg.append('g')
+    .attr('transform', `translate(${margin.left},${margin.top})`);
+
+  /* Axis x positions */
+  const xPos = d3.scalePoint()
+    .domain(AXES.map(a => a.key))
+    .range([0, W])
+    .padding(0.1);
+
+  /* Y scale per axis */
+  const yScales = {};
+  AXES.forEach(ax => {
+    yScales[ax.key] = d3.scaleLinear()
+      .domain([ax.min, ax.max])
+      .range([H, 0])
+      .nice();
+  });
+
+  /* ── Pillar background bands ── */
+  const pillarGroups = {};
+  AXES.forEach(ax => {
+    if (!pillarGroups[ax.pillar]) pillarGroups[ax.pillar] = [];
+    pillarGroups[ax.pillar].push(ax.key);
+  });
+
+  Object.entries(pillarGroups).forEach(([pillar, keys]) => {
+    const xs = keys.map(k => xPos(k));
+    const pad = (xPos.step() * xPos.padding()) * 0.5 + 50;
+    g.append('rect')
+      .attr('x', Math.min(...xs) - pad)
+      .attr('y', -56)
+      .attr('width', Math.max(...xs) - Math.min(...xs) + pad * 2)
+      .attr('height', H + 56 + 20)
+      .attr('fill', PILLAR_COLORS[pillar])
+      .attr('class', 'pillar-band')
+      .attr('rx', 3);
+
+    /* Pillar label above */
+    g.append('text')
+      .attr('x', (Math.min(...xs) + Math.max(...xs)) / 2)
+      .attr('y', -44)
+      .attr('text-anchor', 'middle')
+      .attr('font-family', "'DM Mono', monospace")
+      .attr('font-size', 10)
+      .attr('letter-spacing', '0.06em')
+      .attr('text-transform', 'uppercase')
+      .attr('fill', PILLAR_COLORS[pillar])
+      .text(PILLAR_NAMES[pillar].toUpperCase());
+  });
+
+  /* ── Lines ── */
+  function linePathForCountry(iso) {
+    const d = COUNTRIES[iso];
+    const pts = AXES.map(ax => [xPos(ax.key), yScales[ax.key](d[ax.key])]);
+    return d3.line()(pts);
+  }
+
+  const linesG = g.append('g').attr('class', 'lines');
+
+  active.forEach(iso => {
+    const d = COUNTRIES[iso];
+    linesG.append('path')
+      .datum(iso)
+      .attr('class', 'pc-line')
+      .attr('d', linePathForCountry(iso))
+      .attr('stroke', hdiScale(d.hdi))
+      .attr('id', 'line-' + iso)
+      .on('mouseover', function(event) {
+        d3.selectAll('.pc-line').classed('dimmed', true);
+        d3.select(this).classed('dimmed', false).classed('highlighted', true);
+        showTooltip(event, iso);
+      })
+      .on('mousemove', moveTooltip)
+      .on('mouseout', function() {
+        d3.selectAll('.pc-line').classed('dimmed', false).classed('highlighted', false);
+        hideTooltip();
+      });
+  });
+
+  /* ── Axes ── */
+  AXES.forEach(ax => {
+    const x = xPos(ax.key);
+    const axG = g.append('g').attr('class', 'axis-group').attr('transform', `translate(${x},0)`);
+
+    /* Axis line */
+    axG.append('line')
+      .attr('y1', 0).attr('y2', H)
+      .attr('stroke', '#1a1a18')
+      .attr('stroke-width', 0.5)
+      .attr('stroke-opacity', 0.25);
+
+    /* Ticks */
+    const ticks = yScales[ax.key].ticks(5);
+    ticks.forEach(t => {
+      axG.append('line')
+        .attr('x1', -4).attr('x2', 4)
+        .attr('y1', yScales[ax.key](t)).attr('y2', yScales[ax.key](t))
+        .attr('stroke', '#1a1a18').attr('stroke-width', 0.5).attr('stroke-opacity', 0.3);
+
+      axG.append('text')
+        .attr('class', 'tick-label')
+        .attr('x', -8)
+        .attr('y', yScales[ax.key](t))
+        .attr('text-anchor', 'end')
+        .attr('dominant-baseline', 'middle')
+        .attr('font-family', "'DM Mono', monospace")
+        .attr('font-size', 9)
+        .attr('fill', '#9a9a90')
+        .text(ax.fmt(t));
+    });
+
+    /* Axis title */
+    axG.append('text')
+      .attr('class', 'axis-title')
+      .attr('y', -24)
+      .attr('text-anchor', 'middle')
+      .attr('font-family', "'DM Mono', monospace")
+      .attr('font-size', 10)
+      .attr('font-weight', 500)
+      .attr('fill', '#1a1a18')
+      .attr('letter-spacing', '0.03em')
+      .text(ax.label.toUpperCase());
+
+    /* Axis unit */
+    axG.append('text')
+      .attr('y', -12)
+      .attr('text-anchor', 'middle')
+      .attr('font-family', "'DM Sans', sans-serif")
+      .attr('font-size', 9)
+      .attr('fill', '#9a9a90')
+      .text(ax.unit);
+
+    // /* Pillar color tick at top */
+    // axG.append('rect')
+    //   .attr('x', -8).attr('y', -30)
+    //   .attr('width', 16).attr('height', 2)
+    //   .attr('rx', 1)
+    //   .attr('fill', PILLAR_COLORS[ax.pillar]);
+  });
+
+  /* ── Country name labels at right edge ── */
+  const rightX = xPos(AXES[AXES.length - 1].key);
+  active.forEach(iso => {
+    const d = COUNTRIES[iso];
+    const yEnd = yScales[AXES[AXES.length - 1].key](d[AXES[AXES.length - 1].key]);
+    g.append('text')
+      .attr('x', rightX + 10)
+      .attr('y', yEnd)
+      .attr('dominant-baseline', 'middle')
+      .attr('font-family', "'DM Mono', monospace")
+      .attr('font-size', 10)
+      .attr('fill', hdiScale(d.hdi))
+      .attr('font-weight', 400)
+      .text(iso)
+      .on('mouseover', function(event) {
+        d3.selectAll('.pc-line').classed('dimmed', true);
+        d3.select('#line-' + iso).classed('dimmed', false).classed('highlighted', true);
+        showTooltip(event, iso);
+      })
+      .on('mousemove', moveTooltip)
+      .on('mouseout', function() {
+        d3.selectAll('.pc-line').classed('dimmed', false).classed('highlighted', false);
+        hideTooltip();
+      });
+  });
+
+  renderTags();
+}
+
+/* ── TOOLTIP ── */
+const tt = document.getElementById('tooltip');
+
+function showTooltip(event, iso) {
+  const d = COUNTRIES[iso];
+  const color = hdiScale(d.hdi);
+
+  let rows = AXES.map(ax => `
+    <div class="tt-row">
+      <span class="tt-dim">
+        <span class="tt-pillar" style="background:${PILLAR_COLORS[ax.pillar]}"></span>${ax.label}
+      </span>
+      <span class="tt-val">${ax.fmt(d[ax.key])}</span>
+    </div>
+  `).join('');
+
+  tt.innerHTML = `
+    <div class="tt-header">${d.name}</div>
+    <div class="tt-iso">${iso} · ${d.region}</div>
+    <div class="tt-hdi-row">
+      <span class="tt-hdi-label">HDI</span>
+      <span class="tt-hdi-val" style="color:${color}">${d.hdi.toFixed(3)}</span>
+    </div>
+    ${rows}
+  `;
+  tt.style.opacity = 1;
+  moveTooltip(event);
+}
+
+function moveTooltip(event) {
+  const pad = 16;
+  const tw = 230;
+  let x = event.clientX + pad;
+  if (x + tw > window.innerWidth) x = event.clientX - tw - pad;
+  tt.style.left = x + 'px';
+  tt.style.top = (event.clientY - 20) + 'px';
+}
+
+function hideTooltip() { tt.style.opacity = 0; }
+
+/* ── TAGS ── */
+function renderTags() {
+  const c = document.getElementById('tags');
+  c.innerHTML = '';
+  active.forEach(iso => {
+    const d = COUNTRIES[iso];
+    const color = hdiScale(d.hdi);
+    const tag = document.createElement('div');
+    tag.className = 'tag';
+    tag.style.borderColor = color;
+    tag.style.color = color;
+    tag.style.background = color + '15';
+    tag.innerHTML = `<span>${d.name}</span><span class="x" onclick="removeCountry('${iso}')">×</span>`;
+    c.appendChild(tag);
+  });
+}
+
+/* ── SEARCH ── */
+document.getElementById('country-input').addEventListener('input', function() {
+  const q = this.value.toLowerCase().trim();
+  const sug = document.getElementById('suggestions');
+  if (q.length < 1) { sug.style.display = 'none'; return; }
+  const matches = Object.entries(COUNTRIES)
+    .filter(([iso, d]) => !active.includes(iso) && (d.name.toLowerCase().includes(q) || iso.toLowerCase().includes(q)))
+    .slice(0, 8);
+  if (!matches.length) { sug.style.display = 'none'; return; }
+  sug.innerHTML = matches.map(([iso, d]) =>
+    `<div onclick="selectCountry('${iso}')">${d.name} <span class="iso">${iso}</span></div>`
+  ).join('');
+  sug.style.display = 'block';
+});
+
+document.getElementById('country-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') addFromInput();
+  if (e.key === 'Escape') document.getElementById('suggestions').style.display = 'none';
+});
+
+document.addEventListener('click', e => {
+  if (!e.target.closest('#search-wrap')) document.getElementById('suggestions').style.display = 'none';
+});
+
+function addFromInput() {
+  const val = document.getElementById('country-input').value.trim().toUpperCase();
+  const match = Object.entries(COUNTRIES).find(([iso, d]) =>
+    iso === val || d.name.toLowerCase().includes(val.toLowerCase())
+  );
+  if (match && !active.includes(match[0])) {
+    active.push(match[0]);
+    draw();
+    document.getElementById('country-input').value = '';
+    document.getElementById('suggestions').style.display = 'none';
+  }
+}
+
+function selectCountry(iso) {
+  if (!active.includes(iso)) { active.push(iso); draw(); }
+  document.getElementById('country-input').value = '';
+  document.getElementById('suggestions').style.display = 'none';
+}
+
+function removeCountry(iso) {
+  active = active.filter(c => c !== iso);
+  draw();
+}
+
+function resetDefault() {
+  active = [...DEFAULT_ACTIVE];
+  draw();
+}
+
+window.addFromInput = addFromInput;
+window.selectCountry = selectCountry;
+window.removeCountry = removeCountry;
+window.resetDefault = resetDefault;
+
+/* ── INIT ── */
+draw();
+window.addEventListener('resize', draw);
+</script>
+</body>
+</html>

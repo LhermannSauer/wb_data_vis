@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Tres Pilares del Desarrollo — InfoVis ECD 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #f7f5f0; --surface: #ffffff; --ink: #1a1a18; --ink-2: #5a5a54;
+    --ink-3: #9a9a90; --border: rgba(26,26,24,0.10); --border-2: rgba(26,26,24,0.18);
+    --pillar-1: #c9a96e; --pillar-2: #6e9e8a; --pillar-3: #7a8bbf;
+    --font-display: 'DM Mono', monospace; --font-body: 'DM Sans', sans-serif;
+  }
+  body { background: var(--bg); font-family: var(--font-body); color: var(--ink); min-height: 100vh; }
+
+  .hero {
+    background: var(--surface); padding: 4rem 3rem 3rem;
+    border-bottom: 0.5px solid var(--border-2);
+    max-width: 900px; margin: 0 auto;
+  }
+  .hero h1 {
+    font-family: var(--font-display); font-size: 14px; font-weight: 400;
+    letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 10px;
+  }
+  .hero h2 {
+    font-size: 32px; font-weight: 300; line-height: 1.3; margin-bottom: 16px;
+  }
+  .hero h2 strong { font-weight: 500; }
+  .hero p {
+    font-size: 15px; line-height: 1.7; color: var(--ink-2); max-width: 700px;
+    margin-bottom: 12px;
+  }
+
+  .content { max-width: 900px; margin: 0 auto; padding: 2.5rem 3rem; }
+
+  h3 {
+    font-family: var(--font-display); font-size: 13px; font-weight: 400;
+    letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-3);
+    margin-bottom: 16px; padding-bottom: 8px; border-bottom: 0.5px solid var(--border-2);
+  }
+
+  .questions { margin-bottom: 2.5rem; }
+  .questions ol { padding-left: 20px; margin-top: 8px; }
+  .questions li {
+    font-size: 15px; line-height: 1.8; color: var(--ink-2);
+  }
+
+  .viz-grid {
+    display: grid; grid-template-columns: 1fr; gap: 20px;
+    margin-bottom: 2.5rem;
+  }
+  .viz-card {
+    background: var(--surface); border: 0.5px solid var(--border-2);
+    border-radius: 6px; padding: 20px 24px;
+    transition: box-shadow 0.15s;
+    text-decoration: none; color: inherit; display: block;
+  }
+  .viz-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+  .viz-card .pillar-dot {
+    display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+    margin-right: 6px; vertical-align: middle;
+  }
+  .viz-card h4 {
+    font-size: 16px; font-weight: 500; margin-bottom: 6px;
+  }
+  .viz-card p {
+    font-size: 13px; color: var(--ink-2); line-height: 1.6;
+  }
+  .viz-card .tag {
+    display: inline-block; font-family: var(--font-display); font-size: 10px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    padding: 2px 8px; border-radius: 3px; margin-top: 8px;
+    border: 0.5px solid var(--border-2); color: var(--ink-3);
+  }
+
+  .var-table { width: 100%; border-collapse: collapse; margin-bottom: 2.5rem; }
+  .var-table th, .var-table td {
+    text-align: left; padding: 8px 12px; font-size: 13px;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .var-table th {
+    font-family: var(--font-display); font-size: 11px; font-weight: 400;
+    letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-3);
+    background: var(--bg);
+  }
+  .var-table td { color: var(--ink-2); }
+  .var-table td:first-child { font-weight: 500; color: var(--ink); }
+
+  footer {
+    max-width: 900px; margin: 0 auto;
+    padding: 1.5rem 3rem 3rem; border-top: 0.5px solid var(--border);
+  }
+  footer p {
+    font-size: 11px; color: var(--ink-3); font-family: var(--font-display);
+    line-height: 1.8;
+  }
+  footer p strong { font-weight: 500; color: var(--ink-2); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>InfoVis ECD 2025 — World Bank Data360</h1>
+  <h2>Los <strong>tres pilares del desarrollo</strong>: apertura economica, instituciones y conectividad digital</h2>
+  <p>
+    Este proyecto explora la relacion entre el comercio internacional, la calidad institucional
+    y la conectividad digital con el desarrollo humano, utilizando datos del World Bank Data360.
+    A traves de tres visualizaciones interactivas construidas con D3.js, buscamos responder
+    si la apertura economica, las instituciones solidas y la transformacion digital son
+    verdaderos pilares del desarrollo.
+  </p>
+</div>
+
+<div class="content">
+
+  <div class="questions">
+    <h3>Preguntas que buscamos responder</h3>
+    <ol>
+      <li>Es el comercio internacional un pilar del desarrollo? Los paises mas abiertos al comercio tienen mayor desarrollo humano?</li>
+      <li>Como se relacionan la calidad institucional (estado de derecho, control de corrupcion, libertades civiles) con el desarrollo?</li>
+      <li>La conectividad digital (acceso a internet, gobierno electronico) se correlaciona con mejores resultados de desarrollo?</li>
+      <li>Existen paises que contradicen los patrones esperados — alto comercio pero bajo desarrollo, o viceversa?</li>
+      <li>Como evoluciono la brecha digital global entre 2000 y 2022?</li>
+    </ol>
+  </div>
+
+  <h3>Visualizaciones</h3>
+  <div class="viz-grid">
+    <a class="viz-card" href="html/three_pillars_parallel.html">
+      <h4>Coordenadas Paralelas — Tres Pilares</h4>
+      <p>
+        Cada linea es un pais. Siete ejes representan indicadores de los tres pilares
+        (apertura economica, instituciones, conectividad). El color codifica el IDH.
+        Permite agregar y quitar paises para comparar perfiles multidimensionales.
+      </p>
+      <span class="tag">Interactivo · Buscar paises</span>
+    </a>
+    <a class="viz-card" href="html/cartogram.html">
+      <h4>Cartograma No Contiguo</h4>
+      <p>
+        Mapa mundial donde cada pais conserva su forma real pero se escala proporcionalmente
+        a la variable seleccionada. Ocho indicadores disponibles con transiciones animadas.
+        El color codifica el IDH.
+      </p>
+      <span class="tag">Interactivo · 8 variables · Mapa</span>
+    </a>
+    <a class="viz-card" href="html/pilar3_digital_development.html">
+      <h4>Scatter Plot Animado — Conectividad y E-Gobierno</h4>
+      <p>
+        Grafico de dispersion que muestra la relacion entre uso de internet (eje X)
+        e indice de gobierno electronico (eje Y) para 182 paises, animado desde el
+        ano 2000 hasta 2022. El tamano de cada burbuja codifica el IDH.
+      </p>
+      <span class="tag">Animado · 2000–2022 · 182 paises</span>
+    </a>
+  </div>
+
+  <h3>Definicion de variables</h3>
+  <table class="var-table">
+    <thead>
+      <tr><th>Variable</th><th>Descripcion</th><th>Fuente</th><th>Pilar</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Comercio % PIB</td>
+        <td>Comercio de mercancias (exportaciones + importaciones) como porcentaje del PIB</td>
+        <td>World Bank WDI</td>
+        <td><span class="pillar-dot" style="background:var(--pillar-1)"></span>Apertura</td>
+      </tr>
+      <tr>
+        <td>Exportaciones (USD)</td>
+        <td>Volumen total de exportaciones en dolares corrientes</td>
+        <td>World Bank WITS</td>
+        <td><span class="pillar-dot" style="background:var(--pillar-1)"></span>Apertura</td>
+      </tr>
+      <tr>
+        <td>IED Entrante (% PIB)</td>
+        <td>Inversion extranjera directa neta entrante como porcentaje del PIB</td>
+        <td>World Bank WDI</td>
+        <td><span class="pillar-dot" style="background:var(--pillar-1)"></span>Apertura</td>
+      </tr>
+      <tr>
+        <td>Riqueza per capita</td>
+        <td>Riqueza nacional integral per capita en USD reales encadenados (2019)</td>
+        <td>Changing Wealth of Nations</td>
+        <td><span class="pillar-dot" style="background:var(--pillar-1)"></span>Apertura</td>
+      </tr>
+      <tr>
+        <td>Libertades Civiles</td>
+        <td>Puntaje total de Freedom House (derechos politicos + libertades civiles, 0–100)</td>
+        <td>Freedom House</td>
+        <td><span class="pillar-dot" style="background:var(--pillar-2)"></span>Instituciones</td>
+      </tr>
+      <tr>
+        <td>Estado de Derecho</td>
+        <td>Indice de Estado de Derecho del WJP (0–1)</td>
+        <td>World Justice Project</td>
+        <td><span class="pillar-dot" style="background:var(--pillar-2)"></span>Instituciones</td>
+      </tr>
+      <tr>
+        <td>Control de Corrupcion</td>
+        <td>Rango percentil del indicador de control de corrupcion del WGI (0–100)</td>
+        <td>World Bank WGI</td>
+        <td><span class="pillar-dot" style="background:var(--pillar-2)"></span>Instituciones</td>
+      </tr>
+      <tr>
+        <td>Uso de Internet (%)</td>
+        <td>Individuos que usan internet como porcentaje de la poblacion</td>
+        <td>ITU / World Bank WDI</td>
+        <td><span class="pillar-dot" style="background:var(--pillar-3)"></span>Conectividad</td>
+      </tr>
+      <tr>
+        <td>Indice de E-Gobierno</td>
+        <td>Indice de Desarrollo de Gobierno Electronico de la ONU (0–1)</td>
+        <td>UN EGDI</td>
+        <td><span class="pillar-dot" style="background:var(--pillar-3)"></span>Conectividad</td>
+      </tr>
+      <tr>
+        <td>IDH</td>
+        <td>Indice de Desarrollo Humano — combina salud, educacion y nivel de vida (0–1)</td>
+        <td>PNUD</td>
+        <td>Transversal</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<footer>
+  <p>
+    <strong>Proyecto:</strong> TP Final — Visualizacion de la Informacion, ECD 2025.<br>
+    <strong>Datos:</strong> World Bank Data360 API (data360api.worldbank.org).<br>
+    <strong>Tecnologia:</strong> D3.js v7, TopoJSON, Natural Earth 110m.
+  </p>
+</footer>
+
+</body>
+</html>

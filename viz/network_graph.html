@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Trade & Development Network</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #0a1628; color: #e0e6ed; }
+  h1 { text-align: center; padding: 18px 0 4px; font-size: 1.5rem; font-weight: 600; color: #f0f4f8; }
+  .subtitle { text-align: center; font-size: 0.85rem; color: #8899aa; margin-bottom: 6px; }
+  #graph-container { display: flex; justify-content: center; }
+  svg { background: #0a1628; }
+  .link { stroke-opacity: 0.25; }
+  .link.inter { stroke-dasharray: 4 2; }
+  .link.highlighted { stroke-opacity: 0.8; }
+  .node { cursor: pointer; }
+  .node text { font-size: 9px; fill: #8899aa; pointer-events: none; }
+  .node text.highlighted { fill: #fff; font-weight: 700; }
+  .tooltip {
+    position: absolute; pointer-events: none; background: rgba(10,22,40,0.95);
+    border: 1px solid #2a4a6b; border-radius: 6px; padding: 10px 14px;
+    font-size: 0.8rem; line-height: 1.5; max-width: 280px; display: none;
+  }
+  .tooltip .country-name { font-weight: 700; font-size: 0.95rem; color: #64ffda; }
+  .tooltip .metric { color: #8899aa; }
+  .tooltip .value { color: #e0e6ed; font-weight: 600; }
+  .controls { display: flex; justify-content: center; gap: 20px; margin: 8px 0; flex-wrap: wrap; }
+  .control-group { display: flex; align-items: center; gap: 6px; }
+  .control-group label { font-size: 0.8rem; color: #8899aa; }
+  .control-group select {
+    background: #172a45; border: 1px solid #2a4a6b; color: #e0e6ed;
+    padding: 4px 8px; border-radius: 4px; font-size: 0.8rem;
+  }
+  .legend-container { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin: 4px 0 8px; }
+  .legend-item { display: flex; align-items: center; gap: 4px; font-size: 0.75rem; color: #8899aa; }
+  .legend-swatch { width: 12px; height: 12px; border-radius: 50%; }
+</style>
+</head>
+<body>
+<h1>Trade & Development Network</h1>
+<p class="subtitle">Force-directed graph: countries linked by regional trade ties &mdash; node size = exports, color = region, opacity = HDI</p>
+<div class="controls">
+  <div class="control-group">
+    <label>Size by:</label>
+    <select id="size-metric">
+      <option value="exports_usd_k" selected>Export Volume</option>
+      <option value="trade_pct_gdp">Trade % GDP</option>
+      <option value="fdi_inflows_usd">FDI Inflows (USD)</option>
+      <option value="wealth_pc">Wealth per capita</option>
+    </select>
+  </div>
+  <div class="control-group">
+    <label>Filter region:</label>
+    <select id="region-filter">
+      <option value="all" selected>All Regions</option>
+    </select>
+  </div>
+</div>
+<div class="legend-container" id="legend"></div>
+<div id="graph-container"></div>
+<div class="tooltip" id="tooltip"></div>
+
+<script>
+const W = Math.min(1100, window.innerWidth - 20), H = 650;
+
+const regionColors = {
+  "EAP": "#ff6b6b", "ECA": "#4ecdc4", "LAC": "#ffe66d",
+  "MNA": "#ff9f43", "SAS": "#a29bfe", "SSA": "#fd79a8",
+  "NAC": "#00cec9", "Other": "#636e72"
+};
+
+const regionNames = {
+  "EAP": "East Asia & Pacific", "ECA": "Europe & Central Asia",
+  "LAC": "Latin America & Caribbean", "MNA": "Middle East & N. Africa",
+  "SAS": "South Asia", "SSA": "Sub-Saharan Africa",
+  "NAC": "North America", "Other": "Other"
+};
+
+const tooltip = d3.select("#tooltip");
+
+d3.json("data.json").then(data => {
+  const linkedNodes = new Set();
+  data.network_links.forEach(l => { linkedNodes.add(l.source); linkedNodes.add(l.target); });
+  let nodes = data.nodes.filter(n => linkedNodes.has(n.id) && n.hdi != null);
+  let links = data.network_links.filter(l =>
+    nodes.some(n => n.id === l.source) && nodes.some(n => n.id === l.target)
+  );
+
+  const regions = [...new Set(nodes.map(n => n.region))].sort();
+  const regionSelect = d3.select("#region-filter");
+  regions.forEach(r => {
+    regionSelect.append("option").attr("value", r).text(regionNames[r] || r);
+  });
+
+  const legendDiv = d3.select("#legend");
+  Object.entries(regionColors).forEach(([k, v]) => {
+    if (regions.includes(k)) {
+      legendDiv.append("div").attr("class", "legend-item")
+        .html(`<div class="legend-swatch" style="background:${v}"></div>${regionNames[k]}`);
+    }
+  });
+
+  const svg = d3.select("#graph-container").append("svg")
+    .attr("width", W).attr("height", H);
+
+  const g = svg.append("g");
+
+  svg.call(d3.zoom().scaleExtent([0.3, 5]).on("zoom", e => {
+    g.attr("transform", e.transform);
+  }));
+
+  let linkG = g.append("g");
+  let nodeG = g.append("g");
+
+  function getScale(metric, maxR) {
+    const vals = nodes.map(n => n[metric]).filter(v => v != null && v > 0);
+    if (!vals.length) return d3.scaleSqrt().domain([0, 1]).range([3, maxR]);
+    return d3.scaleSqrt().domain([0, d3.quantile(vals.sort(d3.ascending), 0.95)]).range([3, maxR]);
+  }
+
+  function buildSim(filteredNodes, filteredLinks) {
+    return d3.forceSimulation(filteredNodes)
+      .force("link", d3.forceLink(filteredLinks).id(d => d.id).distance(60).strength(0.3))
+      .force("charge", d3.forceManyBody().strength(-80))
+      .force("center", d3.forceCenter(W / 2, H / 2))
+      .force("collision", d3.forceCollide().radius(d => (d._r || 5) + 2))
+      .force("x", d3.forceX(W / 2).strength(0.05))
+      .force("y", d3.forceY(H / 2).strength(0.05));
+  }
+
+  let simulation;
+
+  function render() {
+    const sizeMetric = d3.select("#size-metric").node().value;
+    const regionFilter = d3.select("#region-filter").node().value;
+
+    let fNodes = regionFilter === "all"
+      ? nodes
+      : nodes.filter(n => n.region === regionFilter);
+
+    const fIds = new Set(fNodes.map(n => n.id));
+    let fLinks = links.filter(l => {
+      const sId = typeof l.source === "object" ? l.source.id : l.source;
+      const tId = typeof l.target === "object" ? l.target.id : l.target;
+      return fIds.has(sId) && fIds.has(tId);
+    }).map(l => ({
+      source: typeof l.source === "object" ? l.source.id : l.source,
+      target: typeof l.target === "object" ? l.target.id : l.target,
+      region: l.region
+    }));
+
+    const scale = getScale(sizeMetric, 22);
+    fNodes.forEach(n => { n._r = scale(Math.max(0, n[sizeMetric] || 0)); });
+
+    if (simulation) simulation.stop();
+
+    linkG.selectAll("*").remove();
+    nodeG.selectAll("*").remove();
+
+    const linkSel = linkG.selectAll("line").data(fLinks).join("line")
+      .attr("class", d => "link" + (d.region === "inter" ? " inter" : ""))
+      .attr("stroke", d => d.region === "inter" ? "#556677" : (regionColors[d.region] || "#556677"))
+      .attr("stroke-width", d => d.region === "inter" ? 1.5 : 1);
+
+    const nodeSel = nodeG.selectAll("g").data(fNodes, d => d.id).join("g")
+      .attr("class", "node")
+      .call(d3.drag()
+        .on("start", (e, d) => {
+          if (!e.active) simulation.alphaTarget(0.3).restart();
+          d.fx = d.x; d.fy = d.y;
+        })
+        .on("drag", (e, d) => { d.fx = e.x; d.fy = e.y; })
+        .on("end", (e, d) => {
+          if (!e.active) simulation.alphaTarget(0);
+          d.fx = null; d.fy = null;
+        })
+      );
+
+    nodeSel.append("circle")
+      .attr("r", d => d._r)
+      .attr("fill", d => regionColors[d.region] || "#636e72")
+      .attr("fill-opacity", d => 0.3 + (d.hdi || 0.3) * 0.7)
+      .attr("stroke", d => regionColors[d.region] || "#636e72")
+      .attr("stroke-width", 1.5);
+
+    nodeSel.append("text")
+      .attr("dx", d => d._r + 3)
+      .attr("dy", 3)
+      .text(d => d._r > 6 ? d.id : "");
+
+    nodeSel.on("mouseover", (e, d) => {
+      const fmt = v => v != null ? d3.format(",.2f")(v) : "N/A";
+      const fmtK = v => v != null ? "$" + d3.format(",.0f")(v / 1000) + "M" : "N/A";
+      tooltip.style("display", "block").html(`
+        <div class="country-name">${d.id} &mdash; ${d.region_name}</div>
+        <div><span class="metric">HDI:</span> <span class="value">${fmt(d.hdi)}</span></div>
+        <div><span class="metric">Exports:</span> <span class="value">${fmtK(d.exports_usd_k)}</span></div>
+        <div><span class="metric">Trade % GDP:</span> <span class="value">${fmt(d.trade_pct_gdp)}%</span></div>
+        <div><span class="metric">FDI Inflows % GDP:</span> <span class="value">${fmt(d.fdi_inflows_pct_gdp)}%</span></div>
+        <div><span class="metric">Wealth/cap:</span> <span class="value">${d.wealth_pc != null ? "$" + d3.format(",.0f")(d.wealth_pc) : "N/A"}</span></div>
+      `);
+
+      const connectedIds = new Set();
+      fLinks.forEach(l => {
+        const sId = typeof l.source === "object" ? l.source.id : l.source;
+        const tId = typeof l.target === "object" ? l.target.id : l.target;
+        if (sId === d.id) connectedIds.add(tId);
+        if (tId === d.id) connectedIds.add(sId);
+      });
+      connectedIds.add(d.id);
+
+      nodeSel.select("circle")
+        .attr("fill-opacity", n => connectedIds.has(n.id) ? 1 : 0.1);
+      nodeSel.select("text")
+        .attr("class", n => connectedIds.has(n.id) ? "highlighted" : "")
+        .text(n => connectedIds.has(n.id) ? n.id : (n._r > 6 ? n.id : ""));
+      linkSel
+        .attr("stroke-opacity", l => {
+          const sId = typeof l.source === "object" ? l.source.id : l.source;
+          const tId = typeof l.target === "object" ? l.target.id : l.target;
+          return connectedIds.has(sId) && connectedIds.has(tId) ? 0.8 : 0.05;
+        });
+    })
+    .on("mousemove", e => {
+      tooltip.style("left", (e.pageX + 12) + "px").style("top", (e.pageY - 10) + "px");
+    })
+    .on("mouseout", () => {
+      tooltip.style("display", "none");
+      nodeSel.select("circle").attr("fill-opacity", d => 0.3 + (d.hdi || 0.3) * 0.7);
+      nodeSel.select("text")
+        .attr("class", "")
+        .text(d => d._r > 6 ? d.id : "");
+      linkSel.attr("stroke-opacity", 0.25);
+    });
+
+    simulation = buildSim(fNodes, fLinks);
+    simulation.on("tick", () => {
+      linkSel
+        .attr("x1", d => d.source.x).attr("y1", d => d.source.y)
+        .attr("x2", d => d.target.x).attr("y2", d => d.target.y);
+      nodeSel.attr("transform", d => `translate(${d.x},${d.y})`);
+    });
+  }
+
+  render();
+  d3.select("#size-metric").on("change", render);
+  d3.select("#region-filter").on("change", render);
+});
+</script>
+</body>
+</html>
