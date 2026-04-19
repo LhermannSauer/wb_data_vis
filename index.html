@@ -107,6 +107,91 @@
     line-height: 1.8;
   }
   footer p strong { font-weight: 500; color: var(--ink-2); }
+
+  /* ======== Punto 1 — API exploration ======== */
+  .api-section { margin-bottom: 2.5rem; }
+  .api-subsection {
+    background: var(--surface); border: 0.5px solid var(--border-2);
+    border-radius: 6px; padding: 18px 22px; margin-bottom: 14px;
+  }
+  .api-subsection h4 {
+    font-family: var(--font-display); font-size: 11px; font-weight: 400;
+    letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink-3);
+    margin-bottom: 10px;
+  }
+  .api-subsection h4 .step-num {
+    display: inline-block; background: var(--ink); color: var(--bg);
+    width: 18px; height: 18px; border-radius: 50%;
+    text-align: center; line-height: 18px; font-size: 10px;
+    margin-right: 8px; vertical-align: middle;
+  }
+  .api-subsection p {
+    font-size: 14px; line-height: 1.75; color: var(--ink-2);
+    margin-bottom: 10px;
+  }
+  .api-subsection p:last-child { margin-bottom: 0; }
+  .api-subsection p strong { color: var(--ink); font-weight: 500; }
+  .api-subsection code {
+    font-family: var(--font-display); font-size: 12px;
+    background: var(--bg); padding: 1px 6px; border-radius: 3px;
+    color: var(--ink-2);
+  }
+  .api-subsection ul {
+    padding-left: 20px; margin: 8px 0 10px; color: var(--ink-2);
+  }
+  .api-subsection ul li {
+    font-size: 13.5px; line-height: 1.7; margin-bottom: 4px;
+  }
+  .api-subsection ul li strong { color: var(--ink); font-weight: 500; }
+  .api-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-family: var(--font-display); font-size: 11px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--ink-2); text-decoration: none;
+    padding: 4px 10px; border: 0.5px solid var(--border-2);
+    border-radius: 3px; transition: all 0.15s;
+  }
+  .api-link:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+
+  /* ======== Observable embed ======== */
+  .observable-embed {
+    background: var(--surface); border: 0.5px solid var(--border-2);
+    border-radius: 6px; overflow: hidden; margin-bottom: 20px;
+  }
+  .observable-embed-header {
+    padding: 14px 20px; border-bottom: 0.5px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 10px;
+  }
+  .observable-embed-header h4 {
+    font-size: 15px; font-weight: 500; margin: 0;
+  }
+  .observable-embed-header .tag {
+    display: inline-block; font-family: var(--font-display); font-size: 10px;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    padding: 3px 9px; border-radius: 3px;
+    border: 0.5px solid var(--border-2); color: var(--ink-3);
+  }
+  .observable-embed iframe {
+    width: 100%; border: none; display: block;
+    min-height: 720px; background: var(--bg);
+  }
+  .observable-embed-footer {
+    padding: 10px 20px; border-top: 0.5px solid var(--border);
+    font-family: var(--font-display); font-size: 10px; color: var(--ink-3);
+    letter-spacing: 0.03em;
+  }
+  .observable-embed-footer a {
+    color: var(--ink-2); text-decoration: none;
+    border-bottom: 0.5px dotted var(--ink-3);
+  }
+  .observable-embed-footer a:hover { color: var(--ink); }
+
+  /* Secondary tag inside viz-card to indicate Observable version */
+  .viz-card .tag + .tag { margin-left: 6px; }
+  .viz-card .tag.observable {
+    border-color: var(--pillar-3); color: var(--pillar-3);
+  }
 </style>
 </head>
 <body>
@@ -125,6 +210,138 @@
 
 <div class="content">
 
+  <div class="api-section">
+    <h3>Punto 1 — Exploración de la API Data360</h3>
+    <p style="font-size:14px;line-height:1.8;color:var(--ink-2);margin-bottom:18px;max-width:760px;">
+      Antes de diseñar las visualizaciones mapeamos el territorio: qué ofrece
+      <a class="api-link" href="https://data360api.worldbank.org" target="_blank" rel="noopener" style="margin: 0 4px;">data360api.worldbank.org ↗</a>,
+      cómo se organiza su catálogo y qué campos devuelve cada observación. Esa
+      exploración definió el subconjunto de indicadores que sostienen las tres
+      visualizaciones de este trabajo.
+    </p>
+
+    <div class="api-subsection">
+      <h4><span class="step-num">1</span>Qué bases de datos existen</h4>
+      <p>
+        Data360 es una plataforma <strong>agregadora</strong>: no es una única base,
+        sino un <strong>hub que unifica 50 datasets temáticos</strong> (~12.800
+        indicadores en total) mantenidos por el Banco Mundial, el FMI, la UIT, la ONU,
+        OECD, Our World in Data y otras organizaciones. Cada base tiene un identificador
+        propio (<code>DATABASE_ID</code>) que permite filtrar sus indicadores.
+      </p>
+      <p>Las bases más pobladas y relevantes para análisis de desarrollo son:</p>
+      <ul>
+        <li><strong>WB_WDI</strong> — World Development Indicators (1.526 indicadores). Es el dataset insignia del Banco Mundial.</li>
+        <li><strong>IMF_BOP</strong> — Balanza de Pagos del FMI (1.147).</li>
+        <li><strong>WB_EDSTATS</strong> — Estadísticas de Educación (1.073).</li>
+        <li><strong>IMF_FSI</strong> — Financial Soundness Indicators (594).</li>
+        <li><strong>WB_ES</strong> — Enterprise Surveys (583).</li>
+        <li><strong>IMF_IFS</strong> — International Financial Statistics (496).</li>
+        <li><strong>WB_GS</strong> — Gender Statistics (364).</li>
+        <li><strong>WB_FINDEX</strong> — Global Findex de inclusión financiera (281).</li>
+        <li><strong>WB_HNP</strong> — Health, Nutrition &amp; Population (193).</li>
+        <li><strong>OWID_CB</strong> — Our World in Data, Carbon Budget (77).</li>
+        <li><strong>WB_CCKP</strong> — Climate Change Knowledge Portal (41).</li>
+        <li><strong>ITU_DH</strong> — UIT, telecomunicaciones y digital (39).</li>
+      </ul>
+      <p>
+        Los indicadores se organizan también por <strong>temática</strong>, y esta
+        dimensión transversal cruza varias bases. Los temas con mayor cobertura son
+        <em>Prosperity</em> (7.707 indicadores), <em>Economic Policy</em> (3.657),
+        <em>Finance</em> (1.625), <em>Trade</em> (1.168), <em>People</em> (954),
+        <em>Institutions</em> (938) y <em>Digital</em> (234), entre otros.
+      </p>
+    </div>
+
+    <div class="api-subsection">
+      <h4><span class="step-num">2</span>Qué indicadores están disponibles y cómo se consultan</h4>
+      <p>
+        La API expone 5 endpoints REST principales. Los usamos todos durante la
+        exploración:
+      </p>
+      <ul>
+        <li><code>GET /data360/data</code> — obtiene observaciones filtradas por base, indicador, país, período, sexo, edad. Respuesta paginada (máx. 1.000 filas por request, se navega con <code>skip</code>).</li>
+        <li><code>GET /data360/indicators?datasetId={id}</code> — lista los indicadores de una base específica.</li>
+        <li><code>POST /data360/searchv2</code> — búsqueda por texto libre con filtros OData (por tema, tipo, base). Soporta facetas y paginación. Fue el endpoint que más usamos para descubrimiento.</li>
+        <li><code>POST /data360/metadata</code> — devuelve metadatos detallados de un indicador (descripción, fuente primaria, metodología).</li>
+        <li><code>GET /data360/disaggregation</code> — informa qué desagregaciones acepta un indicador (sexo, edad, urbanización, etc.).</li>
+      </ul>
+      <p>
+        Cada indicador se identifica con un <strong>código compuesto</strong> que
+        empieza con el identificador de su base: por ejemplo
+        <code>WB_WDI_IT_NET_USER_ZS</code> para uso de internet como % de población,
+        o <code>WB_WDI_NE_TRD_GNFS_ZS</code> para comercio como % del PIB.
+      </p>
+      <p>
+        El detalle de los indicadores seleccionados para este trabajo, junto con
+        su fuente y el pilar analítico al que contribuyen, se encuentra en la
+        tabla de <em>Definición de variables</em> más abajo.
+      </p>
+    </div>
+
+    <div class="api-subsection">
+      <h4><span class="step-num">3</span>Cómo se estructuran los datos</h4>
+      <p>
+        El endpoint <code>/data360/data</code> devuelve JSON en <strong>long-format</strong>:
+        una fila por combinación única de <strong>país × indicador × año × desagregación</strong>.
+        Cada observación trae 24 campos, de los cuales los más importantes son:
+      </p>
+      <ul>
+        <li><code>DATABASE_ID</code> — base fuente (p. ej. <code>WB_WDI</code>).</li>
+        <li><code>INDICATOR</code> — código del indicador.</li>
+        <li><code>REF_AREA</code> — país en código ISO3 (<code>ARG</code>, <code>BRA</code>) o agregado regional (<code>LAC</code>).</li>
+        <li><code>TIME_PERIOD</code> — período, típicamente año.</li>
+        <li><code>OBS_VALUE</code> — el valor numérico observado.</li>
+        <li><code>UNIT_MEASURE</code> — unidad (<code>PT</code>=porcentaje, <code>USD</code>, <code>SCORE</code>, etc.), acompañada de <code>UNIT_MULT</code> como multiplicador.</li>
+        <li><code>COMMENT_TS</code> — nombre legible del indicador, cuando la fuente original lo provee.</li>
+        <li><code>SEX</code>, <code>AGE</code>, <code>URBANISATION</code> — desagregaciones (<code>_T</code> = total, <code>M</code>/<code>F</code> = sexo, etc.).</li>
+        <li><code>OBS_STATUS</code>, <code>OBS_CONF</code> — estado de la observación (<code>A</code>=actual) y nivel de confidencialidad.</li>
+        <li><code>FREQ</code> — frecuencia de la serie (<code>A</code>=anual).</li>
+      </ul>
+      <p>
+        Esta estructura es uniforme a lo largo de todas las bases, lo cual es la
+        gran ventaja de Data360 frente a consumir cada fuente por separado: una vez
+        escrito el código para una base, sirve para todas.
+      </p>
+    </div>
+
+    <div class="api-subsection">
+      <h4><span class="step-num">4</span>Pipeline de extracción implementado</h4>
+      <p>
+        Para bajar los datos implementamos un pipeline en Python que automatiza
+        tres pasos: <strong>descubrimiento</strong>, <strong>extracción paginada</strong>
+        y <strong>persistencia</strong>. El notebook completo está disponible en el
+        repositorio del proyecto:
+        <a class="api-link" href="https://github.com/LhermannSauer/wb_data_vis/blob/main/notebooks/data_extraction.ipynb" target="_blank" rel="noopener" style="margin: 2px 0;">notebooks/data_extraction.ipynb ↗</a>
+      </p>
+      <p>
+        En el paso de <strong>descubrimiento</strong>, iteramos sobre una lista de
+        keywords temáticos (<em>internet</em>, <em>rule of law</em>, <em>corruption</em>,
+        <em>freedom</em>, <em>governance</em>, <em>trade</em>, <em>fdi</em>, etc.) y
+        para cada uno llamamos a <code>/data360/searchv2</code>, que devuelve los
+        indicadores cuya descripción matchea. Esto resolvió el problema de no saber
+        de antemano qué indicadores existían.
+      </p>
+      <p>
+        En la <strong>extracción</strong>, para cada indicador encontrado llamamos
+        a <code>/data360/data</code> en páginas de 1.000 filas, navegando con el
+        parámetro <code>skip</code> hasta agotar la serie. La respuesta JSON de cada
+        página se insertaba en una tabla temporal de <strong>DuckDB</strong> mediante
+        <code>read_json_auto</code>, lo que nos permitió evitar cargar todo en memoria
+        de Python y manejar inferencia de tipos automáticamente.
+      </p>
+      <p>
+        Finalmente, la <strong>persistencia</strong> se hace con
+        <code>COPY ... TO '...' (FORMAT PARQUET)</code>: un archivo Parquet por
+        indicador, organizados en carpetas por tema
+        (<code>data/raw/rule&nbsp;of&nbsp;law/</code>,
+        <code>data/raw/governance/</code>, etc.). El formato Parquet nos dio
+        compresión, tipos preservados y lectura rápida con pandas/DuckDB en la
+        etapa posterior de análisis y visualización.
+      </p>
+    </div>
+  </div>
+
   <div class="questions">
     <h3>Preguntas que buscamos responder</h3>
     <ol>
@@ -136,7 +353,7 @@
     </ol>
   </div>
 
-  <h3>Visualizaciones</h3>
+  <h3>Punto 2 — Visualizaciones</h3>
   <div class="viz-grid">
     <a class="viz-card" href="html/three_pillars_parallel.html">
       <h4>Coordenadas Paralelas — Tres Pilares</h4>
@@ -164,7 +381,37 @@
         ano 2000 hasta 2022. El tamano de cada burbuja codifica el IDH.
       </p>
       <span class="tag">Animado · 2000–2022 · 182 paises</span>
+      <span class="tag observable">También en Observable ↓</span>
     </a>
+  </div>
+
+  <h3>Punto 3 — Implementación en Observable</h3>
+  <p style="font-size:14px;line-height:1.8;color:var(--ink-2);margin-bottom:18px;max-width:760px;">
+    Además de D3.js vanilla, reimplementamos el <strong>scatter plot animado</strong> en
+    <strong>Observable</strong> usando <strong>Observable Plot</strong>, cumpliendo con
+    la consigna del punto 3 del enunciado, que contempla esta herramienta como alternativa
+    válida. La versión Observable aprovecha la reactividad nativa de la plataforma:
+    el slider, el botón de animación y los filtros de región están unificados en una sola
+    celda y se sincronizan automáticamente sin event listeners manuales.
+  </p>
+
+  <div class="observable-embed">
+    <div class="observable-embed-header">
+      <h4>Scatter Plot Animado — Versión Observable</h4>
+      <span class="tag">Observable Plot · Reactivo</span>
+    </div>
+    <iframe
+      src="https://observablehq.com/embed/@itba26/conectividad-digital-y-apertura-comercial?cells=viewof+dashboard"
+      title="Scatter Plot Animado — Conectividad Digital y Apertura Comercial (Observable)"
+      loading="lazy"
+      allow="fullscreen"></iframe>
+    <div class="observable-embed-footer">
+      Abrir en Observable →
+      <a href="https://observablehq.com/@itba26/conectividad-digital-y-apertura-comercial"
+         target="_blank" rel="noopener">
+        observablehq.com/@itba26/conectividad-digital-y-apertura-comercial ↗
+      </a>
+    </div>
   </div>
 
   <h3>Definicion de variables</h3>
@@ -487,7 +734,8 @@
   <p>
     <strong>Proyecto:</strong> TP Final — Visualizacion de la Informacion, ECD 2025.<br>
     <strong>Datos:</strong> World Bank Data360 API (data360api.worldbank.org).<br>
-    <strong>Tecnologia:</strong> D3.js v7, TopoJSON, Natural Earth 110m.
+    <strong>Pipeline de extraccion:</strong> Python (requests, pandas, DuckDB) con persistencia en Parquet.<br>
+    <strong>Visualizacion:</strong> D3.js v7, TopoJSON, Natural Earth 110m, Observable Plot.
   </p>
 </footer>
 
