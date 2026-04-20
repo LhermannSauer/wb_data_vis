@@ -414,6 +414,40 @@
     </div>
   </div>
 
+    <div class="observable-embed">
+    <div class="observable-embed-header">
+      <h4>Cartograma no contiguo — Versión Observable</h4>
+      <span class="tag">Observable Plot · Reactivo</span>
+    </div>
+   <iframe width="100%" height="687" frameborder="0"
+  src="https://observablehq.com/embed/9bd7123642e7142d@61?cells=chart%2Cviewof+activeVar&api_key=acc443ce2d666830f62321c2543d88df5847f433"></iframe>
+
+    <div class="observable-embed-footer">
+      Abrir en Observable →
+      <a href="https://observablehq.com/d/9bd7123642e7142d"
+         target="_blank" rel="noopener">
+        https://observablehq.com/d/9bd7123642e7142d ↗
+      </a>
+    </div>
+  </div>
+
+    <div class="observable-embed">
+    <div class="observable-embed-header">
+      <h4>Coordenadas paralelas — Versión Observable</h4>
+      <span class="tag">Observable Plot · Reactivo</span>
+    </div>
+    <iframe width="100%" height="657" frameborder="0"
+  src="https://observablehq.com/embed/ec709763a3e708b5@43?cells=chart%2Cviewof+active&api_key=dacaa4eb09030988520e880cbbdaff7656cc0fa3"></iframe>
+    <div class="observable-embed-footer">
+      Abrir en Observable →
+      <a href="https://observablehq.com/d/ec709763a3e708b5"
+         target="_blank" rel="noopener">
+        https://observablehq.com/d/9bd7123642e7142d ↗
+      </a>
+    </div>
+  </div>
+    
+  
   <h3>Definicion de variables</h3>
   <table class="var-table">
     <thead>
@@ -483,196 +517,7 @@
     </tbody>
   </table>
 
-  <h3>Cómo leer cada visualización</h3>
-
-  <h4>Coordenadas Paralelas — Los tres pilares en simultáneo</h4>
-  <p>
-    Cada línea que cruza los siete ejes verticales es un país. Los ejes están
-    agrupados en tres bloques: <strong>apertura económica</strong> (comercio % PIB,
-    IED entrante), <strong>instituciones</strong> (libertades civiles, estado de
-    derecho, control de corrupción) y <strong>conectividad</strong> (uso de internet,
-    e-gobierno). El color de cada línea representa el IDH: las líneas más oscuras
-    corresponden a países con mayor desarrollo humano.
-  </p>
-  <p>
-    El gráfico se lee buscando <strong>patrones de pendiente</strong>: si un país
-    tiene valores altos en todos los ejes, su línea corre cerca del tope en toda
-    la extensión — es un país donde los tres pilares están alineados. Cuando una
-    línea sube y baja bruscamente entre ejes, revela un <strong>desbalance entre
-    pilares</strong>. La función de búsqueda permite agregar países específicos
-    para comparar sus perfiles de manera directa.
-  </p>
-
-  <h4>Cartograma No Contiguo — La geografía de la desigualdad</h4>
-  <p>
-    Cada país conserva su silueta geográfica real pero su tamaño se escala
-    proporcionalmente al indicador seleccionado. Las siluetas grises de fondo
-    muestran el tamaño original como referencia. El color sigue codificando el IDH.
-  </p>
-  <p>
-    La lectura clave es la <strong>distorsión respecto al mapa real</strong>: cuando
-    un país se agranda, significa que tiene un valor alto en esa variable; cuando
-    casi desaparece, tiene un valor muy bajo. Al cambiar entre indicadores con los
-    botones, se puede observar si los mismos países dominan en todas las variables
-    (reforzando la tesis de los tres pilares) o si hay redistribuciones inesperadas.
-    Las transiciones animadas entre variables permiten detectar qué países cambian
-    más de tamaño relativo — esos son los casos más interesantes analíticamente.
-  </p>
-
-  <h4>Scatter Plot Animado — La revolución digital en movimiento</h4>
-  <p>
-    El eje X muestra el porcentaje de la población que usa internet y el eje Y el
-    índice de gobierno electrónico. El tamaño de cada burbuja codifica el IDH y
-    el color identifica la región del mundo. El slider permite navegar desde el
-    año 2000 hasta 2022 y el botón "Animar" reproduce la evolución automáticamente.
-  </p>
-  <p>
-    La lectura principal es el <strong>movimiento de la nube de puntos hacia arriba
-    y a la derecha</strong> a lo largo del tiempo: los países avanzan
-    simultáneamente en conectividad y gobierno electrónico. Sin embargo, la
-    velocidad es desigual — algunos países saltan rápidamente mientras otros apenas
-    se mueven, y esa brecha creciente es visible como una <strong>elongación de la
-    nube</strong> a medida que avanzan los años.
-  </p>
-
-  <h3>Observaciones</h3>
-
-  <h4>Desde las Coordenadas Paralelas</h4>
-  <p>
-    <strong>Las líneas oscuras (IDH alto) recorren la parte superior de casi todos
-    los ejes, pero con excepciones reveladoras.</strong> Al cargar Norway, se observa
-    una línea que corre alta y pareja en los siete ejes — apertura económica, instituciones
-    y conectividad alineados. Es el perfil de un país donde los tres pilares funcionan
-    en conjunto. En contraste, Nigeria (línea clara, IDH bajo) corre por la parte
-    inferior en prácticamente todos los ejes.
-  </p>
-  <p>
-    <strong>Singapur revela el desbalance más dramático del gráfico.</strong>
-    Su línea trepa a valores extremos en los ejes económicos (comercio 318% del PIB,
-    IED 12.5%) pero cae abruptamente al cruzar al bloque de instituciones, con
-    libertades civiles en 38 sobre 100. Es un país que lidera en apertura económica
-    y conectividad (internet 92%, e-gobierno 0.94) pero con un déficit institucional
-    en materia de derechos. Su IDH es muy alto (0.939) pero el desbalance sugiere
-    que el desarrollo puede avanzar por vías diferentes — aunque a costa de
-    libertades.
-  </p>
-  <p>
-    <strong>Argentina y Uruguay muestran un patrón latinoamericano claro.</strong>
-    Ambos se ubican en zona media-alta en conectividad e internet
-    pero caen en los ejes económicos (bajo comercio relativo, poca IED) y en los
-    institucionales (estado de derecho y control de corrupción por debajo de la media).
-    China ofrece otro contraste interesante: comercio alto pero libertades civiles
-    en el fondo del gráfico.
-  </p>
-
-  <h4>Desde el Cartograma</h4>
-  <p>
-    <strong>Comercio % PIB vs. Exportaciones en USD revelan dos caras de la
-    apertura.</strong> Al seleccionar "Comercio % PIB", el mapa se distorsiona a
-    favor de economías pequeñas y abiertas de Europa — los países grandes
-    territorialmente se reducen. Pero al cambiar a "Exportaciones", el mapa se
-    invierte: Estados Unidos, China, Alemania y Rusia se expanden enormemente,
-    mostrando que el peso absoluto en el comercio global lo tienen las grandes
-    economías, aunque relativo a su PIB sean menos abiertas.
-  </p>
-  <p>
-    <strong>La comparación entre "Riqueza per cápita" y "Libertad" es la más
-    reveladora.</strong> En riqueza, Norteamérica, Europa Occidental, Australia y
-    Japón dominan el mapa con color oscuro (alto IDH). Al cambiar a libertad, la
-    distribución es similar para Occidente, pero aparece un contraste importante:
-    China mantiene tamaño considerable en riqueza pero se reduce drásticamente en
-    libertad. América Latina, en cambio, mantiene un tamaño digno en libertad —
-    Brasil y Argentina se ven más grandes en libertad que en riqueza per cápita.
-  </p>
-  <p>
-    <strong>África Subsahariana se encoge en casi todas las variables, pero el grado
-    varía.</strong> La reducción es más extrema en riqueza per cápita y control de
-    corrupción, donde el continente prácticamente desaparece. En internet, algunos
-    países africanos mantienen cierto tamaño. Y en IDH, la imagen final muestra la
-    síntesis más dura: el continente entero es claro (bajo IDH) y pequeño, confirmando
-    que los tres pilares fallan simultáneamente.
-  </p>
-
-  <h4>Desde el Scatter Plot Animado</h4>
-  <p>
-    <strong>En 2000, casi todo el mundo está ubicado abajo a la izquierda.</strong>
-    La mayoría de los países tienen menos de 10% de penetración de internet y EGDI
-    por debajo de 0.5. Solo Norteamérica (verde) y algunos países europeos (azul)
-    se ubican más a la derecha, con 40-60% de internet. Las burbujas rojas de África
-    Subsahariana están pegadas al origen. La nube es compacta — la brecha digital
-    aún no se ha abierto.
-  </p>
-  <p>
-    <strong>Entre 2000 y 2008 se produce la gran expansión.</strong> La nube se
-    estira dramáticamente hacia la derecha. Europa y Norteamérica saltan a 70-100%
-    de internet con EGDI superior a 0.7. América Latina (amarillo) y Medio Oriente
-    (naranja) se mueven al centro del gráfico (30-60%). Pero África apenas se
-    desplaza — la brecha digital se abre en esta década. Para 2014 la nube ya
-    tiene una forma diagonal clara, y para 2018 el cluster denso está firmemente
-    instalado en el cuadrante superior derecho.
-  </p>
-  <p>
-    <strong>En 2022, la diagonal revela la brecha estructural.</strong> La nube
-    va de abajo-izquierda (África Subsahariana, 10-30% internet, EGDI 0.1-0.4)
-    a arriba-derecha (Europa, Norteamérica y Asia Oriental, 80-100% internet,
-    EGDI 0.8-1.0). América Latina se ubica en el medio (60-80%, EGDI 0.5-0.7).
-    Pero lo más llamativo es que el tamaño de las burbujas (IDH) no varía tanto
-    como la posición — países que avanzaron mucho en internet no necesariamente
-    tienen burbujas más grandes, confirmando que la conectividad sola no produce
-    desarrollo humano.
-  </p>
-
-  <h3>Hallazgos transversales</h3>
-  <p>
-    Al analizar las tres visualizaciones en conjunto, emergen patrones que ningún
-    gráfico individual podría revelar:
-  </p>
-  <p>
-    <strong>1. El desarrollo es sistémico, pero admite caminos diferentes.</strong>
-    Las coordenadas paralelas muestran que los países con IDH alto tienden a tener
-    valores altos en los tres pilares. Sin embargo, Singapur demuestra que es posible
-    alcanzar un IDH muy alto (0.939) con un pilar institucional débil en libertades,
-    compensando con apertura económica y conectividad extremas. Aun así, es la
-    excepción — la mayoría de los países con IDH alto tienen perfiles más equilibrados,
-    lo que sugiere que el camino más robusto al desarrollo involucra los tres pilares.
-  </p>
-  <p>
-    <strong>2. El cartograma revela que tamaño económico y apertura son cosas
-    distintas.</strong> Al alternar entre "Comercio % PIB" y "Exportaciones USD",
-    el mapa se invierte completamente. Las economías pequeñas y abiertas dominan
-    en comercio relativo; las potencias dominan en volumen absoluto. Esto sugiere
-    que la apertura comercial como pilar del desarrollo opera de manera diferente
-    según la escala del país — y que un solo indicador no alcanza para capturar
-    la relación con el desarrollo.
-  </p>
-  <p>
-    <strong>3. La conectividad digital es el pilar que más rápido se mueve, pero el
-    que menos alcanza solo.</strong> El scatter animado lo muestra con claridad:
-    entre 2000 y 2022 la nube se desplaza masivamente hacia la derecha (internet
-    pasó de <10% a 60-100% en la mayoría de los países), pero el tamaño de las
-    burbujas (IDH) creció mucho menos. La infraestructura digital se despliega en
-    una década; el desarrollo humano — educación, salud, nivel de vida — requiere
-    generaciones de inversión sostenida y marcos institucionales que la acompañen.
-  </p>
-  <p>
-    <strong>4. Los desbalances entre pilares identifican los casos más
-    interesantes.</strong> Las coordenadas paralelas muestran que Singapur tiene
-    un perfil económico excepcional pero cae en libertades civiles. China es grande
-    en exportaciones y riqueza pero desaparece en libertad. América Latina mantiene
-    un nivel razonable de libertad pero cae en corrupción y apertura económica. Cada
-    desbalance sugiere que los tres pilares tienen pesos relativos diferentes según
-    el contexto, pero que las asimetrías limitan el potencial de desarrollo.
-  </p>
-  <p>
-    <strong>5. América Latina tiene conectividad y libertad, pero le falta el
-    eslabón institucional-económico.</strong> En las coordenadas paralelas,
-    Argentina y Uruguay muestran internet y e-gobierno en zona media-alta, y
-    libertades civiles razonables. Pero caen en comercio relativo, IED, estado
-    de derecho y control de corrupción. El cartograma lo confirma: la región
-    mantiene tamaño en libertad e internet, pero se achica en riqueza per cápita
-    y corrupción. El cuello de botella para el desarrollo en LATAM parece estar
-    en la calidad institucional y la apertura económica, no en la conectividad.
-  </p>
+  
 
   <h3>Conclusión</h3>
   <p>
